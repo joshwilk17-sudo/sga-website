@@ -299,7 +299,7 @@ def faq_data():
         ("How do I install a plugin on a Mac?",
          "<ol><li>Unzip the download.</li><li>Open <code>Read Me First.txt</code>.</li><li>Right-click <code>Install &lt;Plugin&gt;.command</code> and choose <strong>Open</strong>.</li><li>Restart your DAW and rescan plugins.</li></ol><p>The installer copies the AU, VST3 and Standalone app into the right folders for you.</p>"),
         ("How do I install a plugin on Windows?",
-         "<ol><li>Download the Windows version from the plugin's Payhip page and unzip it.</li><li>Copy the <code>.vst3</code> into <code>C:\\Program Files\\Common Files\\VST3</code>.</li><li>Restart your DAW and rescan plugins.</li></ol><p>The Standalone app runs straight from the folder, no DAW needed. Follow the Read Me in the download if it says otherwise.</p>"),
+         "<ol><li>Download the Windows version from the plugin's page and unzip it.</li><li>Run the installer <code>.exe</code> inside.</li><li>Restart your DAW and rescan plugins.</li></ol>"),
         ("Windows says “Windows protected your PC”. What now?",
          "<p>That's SmartScreen being cautious about indie software. Click <strong>More info</strong>, then <strong>Run anyway</strong>.</p>"),
         ("macOS says the installer “can’t be opened”. What now?",

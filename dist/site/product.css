@@ -475,6 +475,8 @@ body.sga-pp .product-description h1, body.sga-pp .product-description h2, body.s
 body.sga-pp .product-description h1 { font-size: clamp(34px, 4vw, 52px) !important; }
 body.sga-pp .product-description h1 em, body.sga-pp .product-description h2 em { font-style: normal; }
 body.sga-pp .product-description strong { color: var(--text) !important; }
+/* the editor's inline colours (orange body text) give way to the house text colour; headings stay amber */
+body.sga-pp .product-description [style*="color"] { color: inherit !important; }
 body.sga-pp .product-description a { color: var(--amber) !important; border-bottom: 1px solid rgba(245,158,11,.4); text-decoration: none !important; }
 body.sga-pp .product-description img { border-radius: 12px; }
 body.sga-pp .product-meta-wrapper {
