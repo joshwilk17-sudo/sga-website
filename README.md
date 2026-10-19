@@ -38,7 +38,8 @@ Payhip only allows Embed Code sections (and header/footer code) on stores with a
    - `/Store#all`: All Plugins (this is the default)
    Leave the cart and account icons alone.
 6. **Product pages:** go to **Change store style → Advanced → Header code injection** and paste `dist/payhip/header-code.html` (three lines). Every product page (`/b/<code>`) then gets the box art, styled title and buttons, the slogan strip, "More from the flock" and the footer. Payhip's price box, Add to Cart, Buy Now, reviews and checkout are untouched.
-7. Payhip can't preview embed code inside the builder, so check the live site after you publish.
+7. **Checkout page:** Payhip allows CSS (not JavaScript) on checkout. Open any product, click **Buy Now**, click the gear icon to open **Customize Page**, and paste all of `dist/payhip/checkout.css` into its custom CSS box. In the same menu, set the **Buy Now button colour** to `#f59e0b` and the banner colour to `#0d0d0d`, and upload `images/sga-logo.png` as the logo. Card and PayPal fields come from the payment provider and keep their own look.
+8. Payhip can't preview embed code inside the builder, so check the live site after you publish.
 
 Every "Buy" or "Get it free" button links to the product's own Payhip page (`sillygooseaudio.com/b/<code>`), so add-to-cart, checkout, license keys and downloads all still run through Payhip.
 
