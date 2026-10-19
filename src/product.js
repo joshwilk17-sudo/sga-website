@@ -53,7 +53,7 @@
     /* reassurance lines under the buttons */
     if (p && col) {
       var anchor = col.querySelector(".preview-link-and-wishlist-link-wrapper") || col.querySelector(".payhip-buy-button") || col.querySelector(".btn-primary");
-      var lines = ["Instant download after checkout", "Mac (Apple Silicon + Intel) and Windows", p.price === 0 ? "Free: enter $0 at checkout, tip if you like" : "License key included with your receipt"];
+      var lines = ["Instant download after checkout", "Mac (Apple Silicon + Intel) and Windows", p.price === 0 ? "Free. No payment needed" : "License key included with your receipt"];
       if (anchor) anchor.insertAdjacentElement("afterend", el('<div class="sga-pp-trust"><div>' + lines.join("</div><div>") + "</div></div>"));
     }
 

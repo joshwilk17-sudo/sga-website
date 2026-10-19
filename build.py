@@ -233,7 +233,7 @@ def page_home(a):
     <div class="sga-feats sga-reveal">
       <div class="sga-feat"><div class="sga-feat__k">2 platforms</div><h4>Mac + Windows</h4><p>VST3, AU and Standalone. Works in Ableton, Logic, FL Studio, Reaper, Studio One, Bitwig and friends.</p></div>
       <div class="sga-feat"><div class="sga-feat__k">1 click</div><h4>Installer included</h4><p>Unzip, run the installer, rescan your plugins. Instructions in every download.</p></div>
-      <div class="sga-feat"><div class="sga-feat__k">{FREE_COUNT} free</div><h4>Free means free</h4><p>Name your price at $0. Tip the goose if it made you laugh.</p></div>
+      <div class="sga-feat"><div class="sga-feat__k">{FREE_COUNT} free</div><h4>Free means free</h4><p>No card, no catch. Tip the goose if it made you laugh.</p></div>
     </div>
   </div>
 </section>
@@ -287,7 +287,7 @@ def faq_data():
     return [
     ("Buying & downloads", "buying", [
         ("Are the free plugins really free?",
-         "<p>Yes. Every Sister Plugin, plus Bit-Gooser, Goose EQ and Goose Gate, is free. Payhip will show a price box: enter <code>0</code> and check out. If one made you laugh, you're welcome to tip the goose.</p>"),
+         "<p>Yes. Every Sister Plugin, plus Bit-Gooser, Goose EQ and Goose Gate, is free. Check out as normal, no payment needed. If a plugin shows a name-your-price box, leave it at <code>$0</code>, or tip the goose if it made you laugh.</p>"),
         ("Where's my download?",
          f"<p>Right after checkout Payhip shows a download button and emails you a receipt with the same link. Lost it? <a href=\"{CFG['login_url']}\">Log in to your Payhip account</a> with the email you bought with, and every purchase is there to re-download.</p>"),
         ("Can I get a refund?",
