@@ -33,20 +33,21 @@ Payhip only allows Embed Code sections (and header/footer code) on stores with a
 3. **Home page:** remove the default sections you don't want, add section → **Embed Code**, paste all of `dist/payhip/home.html`, publish.
 4. **Add pages:** create custom pages **Shop**, **FAQ**, **Contact**. On each one, add an **Embed Code** section and paste the matching `dist/payhip/<page>.html`.
 5. **Header navigation:** set the links to Home · Shop · FAQ · Contact. You can deep-link the shop tabs:
-   - `/shop#originals`: Original Plugins
-   - `/shop#sister`: Sister Plugins
-   - `/shop#all`: All Plugins (this is the default)
+   - `/Store#originals`: Original Plugins
+   - `/Store#sister`: Sister Plugins
+   - `/Store#all`: All Plugins (this is the default)
    Leave the cart and account icons alone.
-6. Payhip can't preview embed code inside the builder, so check the live site after you publish.
+6. **Product pages:** go to **Change store style → Advanced → Header code injection** and paste `dist/payhip/header-code.html` (three lines). Every product page (`/b/<code>`) then gets the box art, styled title and buttons, the slogan strip, "More from the flock" and the footer. Payhip's price box, Add to Cart, Buy Now, reviews and checkout are untouched.
+7. Payhip can't preview embed code inside the builder, so check the live site after you publish.
 
-Every "Buy" or "Get it free" button links to the product's own Payhip page (`payhip.com/b/<code>`), so add-to-cart, checkout, license keys and downloads all still run through Payhip.
+Every "Buy" or "Get it free" button links to the product's own Payhip page (`sillygooseaudio.com/b/<code>`), so add-to-cart, checkout, license keys and downloads all still run through Payhip.
 
 ## Adding a new plugin
 
 1. Render its box art (`BOX-ART/render.sh`), then make the web copy:
    `sips -Z 720 BOX-ART/renders/<id>_box.png --out /tmp/<id>.png && cwebp -q 82 -alpha_q 90 /tmp/<id>.png -o WEBSITE/images/box/<id>.webp`
 2. Add an entry to `PRODUCTS` in `build.py` with its Payhip code, price, category and tagline. Set `id=None` for a "hatching soon" teaser.
-3. Run `python3 build.py`, commit and push (`git add -A && git commit -m "Add <plugin>" && git push`), then re-paste the Home and Shop blocks.
+3. Run `python3 build.py`, commit and push (`git add -A && git commit -m "Add <plugin>" && git push`), then re-paste the Home and Shop blocks. Product pages update by themselves (the header code loads `dist/site/product.js` from GitHub Pages; allow about 10 minutes for caches).
 
 ## Preview locally
 
