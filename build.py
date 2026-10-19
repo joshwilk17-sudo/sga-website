@@ -490,6 +490,8 @@ def product_bundle():
         f'<link rel="stylesheet" href="{a}dist/site/product.css">\n'
         f'<script src="{a}dist/site/product.js" defer></script>\n')
     print("built product theme: dist/payhip/header-code.html (+ dist/site/product.js, product.css)")
+    (ROOT / "dist/payhip/checkout.css").write_text((ROOT / "src/checkout.css").read_text().replace("https://joshwilk17-sudo.github.io/sga-website/", a))
+    print("built checkout theme: dist/payhip/checkout.css")
 
 
 def main():

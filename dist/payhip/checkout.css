@@ -1,0 +1,129 @@
+/* Silly Goose Audio: checkout (/buy) theme.
+   Payhip allows CSS only on checkout (no JavaScript), so the slogan and goose are drawn with ::before/::after.
+   Card/PayPal fields are secure iframes from the payment provider and keep their own styling. */
+@import url("https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@800;900&family=Barlow:wght@400;500;600&family=JetBrains+Mono:wght@500;700&display=swap");
+
+:root {
+  --sga-bg: #0d0d0d; --sga-panel: #161616; --sga-strip: #1c1c1c; --sga-line: #262626; --sga-line-hot: #3a2a0d;
+  --sga-amber: #f59e0b; --sga-hot: #fbbf24; --sga-deep: #b45309;
+  --sga-text: #f2f2f2; --sga-soft: #d6d6d6; --sga-dim: #9a9a9a;
+  --sga-display: "Barlow Condensed", "Avenir Next Condensed", "Arial Narrow", sans-serif;
+  --sga-body: "Barlow", "Helvetica Neue", Arial, sans-serif;
+  --sga-mono: "JetBrains Mono", ui-monospace, Menlo, monospace;
+}
+
+/* ---------- canvas ---------- */
+html, body {
+  background-color: var(--sga-bg) !important; color: var(--sga-soft) !important;
+  font-family: var(--sga-body) !important;
+}
+body {
+  background-image:
+    radial-gradient(45% 50% at 20% 0%, rgba(245,158,11,.14), transparent 70%),
+    linear-gradient(rgba(255,255,255,.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,.025) 1px, transparent 1px) !important;
+  background-size: auto, 44px 44px, 44px 44px !important;
+  background-attachment: fixed !important;
+}
+.app, .split-view, .split-view-primary, .split-view-content, .mobile-top-segment { background: transparent !important; }
+.split-view .split-view-secondary {
+  background: radial-gradient(70% 50% at 50% 0%, rgba(245,158,11,.10), transparent 70%), var(--sga-panel) !important;
+  border-left: 1px solid var(--sga-line-hot) !important; color: var(--sga-soft) !important;
+}
+
+/* slogan strip + goose above the form */
+.split-view-primary .split-view-content::before {
+  content: "Serious plugins for unserious geese";
+  display: block; margin: 0 auto 36px; max-width: 557px; padding: 12px 16px 12px 48px;
+  background: rgba(245,158,11,.08) url("https://joshwilk17-sudo.github.io/sga-website/images/goose-head.png") no-repeat 14px 50% / 22px auto;
+  border: 1px solid var(--sga-line-hot); border-radius: 10px;
+  font: 700 11px/1.3 var(--sga-mono); letter-spacing: .28em; text-transform: uppercase; color: var(--sga-amber);
+}
+
+/* ---------- type ---------- */
+h1, h2, h3, h4, .section-title, .section-header, .headline {
+  font-family: var(--sga-display) !important; font-weight: 900 !important; text-transform: uppercase; letter-spacing: .01em;
+  color: var(--sga-text) !important;
+}
+.input-label, .input-label div, label, .form-label, .items-ready-for-download-message {
+  color: var(--sga-soft) !important; font-family: var(--sga-body) !important;
+}
+.input-label > div:first-child, .form-label {
+  font: 700 11px/1.4 var(--sga-mono) !important; letter-spacing: .18em !important; text-transform: uppercase !important; color: var(--sga-dim) !important;
+}
+.items-ready-for-download-message { font: 700 12px var(--sga-mono) !important; letter-spacing: .16em; text-transform: uppercase; color: var(--sga-amber) !important; }
+a, .login-link-primary { color: var(--sga-amber) !important; }
+a:hover { color: var(--sga-hot) !important; }
+
+/* ---------- fields ---------- */
+.form-control, .form-select, input[type="text"], input[type="email"], input[type="tel"], select, textarea {
+  background-color: #0b0b0b !important; border: 1px solid var(--sga-line) !important; border-radius: 10px !important;
+  color: var(--sga-text) !important; font-family: var(--sga-body) !important; box-shadow: none !important;
+}
+.form-control::placeholder { color: #6b6b6b !important; }
+.form-control:focus, .form-select:focus, select:focus, textarea:focus {
+  border-color: var(--sga-amber) !important; box-shadow: 0 0 0 3px rgba(245,158,11,.18) !important;
+}
+.form-check-input {
+  background-color: #0b0b0b !important; border: 1.5px solid var(--sga-amber) !important; border-radius: 4px !important;
+}
+.form-check-input:checked { background-color: var(--sga-amber) !important; border-color: var(--sga-amber) !important; }
+.form-check-input:focus { box-shadow: 0 0 0 3px rgba(245,158,11,.25) !important; }
+
+/* ---------- buttons ---------- */
+.btn-primary, .btn-hero {
+  background: var(--sga-amber) !important; border: 0 !important; color: #111 !important; border-radius: 10px !important;
+  font: 700 14px/1 var(--sga-mono) !important; letter-spacing: .16em !important; text-transform: uppercase !important;
+  box-shadow: 0 0 0 1px var(--sga-hot) inset, 0 12px 32px -12px rgba(245,158,11,.8) !important;
+  transition: transform .15s ease, background .2s ease !important;
+}
+.btn-primary span, .btn-hero span { color: #111 !important; font: inherit !important; }
+.btn-primary svg, .btn-hero svg, .btn-primary i, .btn-hero i { color: #111 !important; fill: #111 !important; }
+.btn-primary:hover, .btn-hero:hover { background: var(--sga-hot) !important; transform: translateY(-2px); }
+.btn-outline-secondary, .btn-secondary, .btn-light {
+  background: transparent !important; border: 1.5px solid var(--sga-line) !important; color: var(--sga-soft) !important; border-radius: 10px !important;
+}
+
+/* ---------- cart summary ---------- */
+.cart-item-row { border-color: var(--sga-line) !important; }
+.product-thumbnail-wrapper img { border-radius: 8px !important; border: 1px solid var(--sga-line-hot) !important; }
+.product-name {
+  font: 900 22px/1 var(--sga-display) !important; text-transform: uppercase; color: var(--sga-text) !important;
+}
+.product-price, .product-price-original, .line-item-value { color: var(--sga-soft) !important; font-family: var(--sga-mono) !important; }
+.line-item-description { color: var(--sga-dim) !important; font: 700 11px/2 var(--sga-mono) !important; letter-spacing: .16em; text-transform: uppercase; }
+.line-item-total { border-top: 1px solid var(--sga-line) !important; padding-top: 14px !important; }
+.line-item-total .line-item-description { color: var(--sga-text) !important; font-size: 13px !important; }
+.total-price-code { color: var(--sga-dim) !important; font-family: var(--sga-mono) !important; }
+.formatted-price-large { font: 900 34px/1 var(--sga-display) !important; color: var(--sga-amber) !important; }
+.cart-totals-segment hr, .cart-segment hr { border-color: var(--sga-line) !important; }
+.cart-segment::after {
+  content: "Instant download · Mac + Windows · VST3 · AU · Standalone";
+  display: block; margin-top: 24px; padding-top: 18px; border-top: 1px dashed var(--sga-line-hot);
+  font: 500 11px/1.6 var(--sga-mono); letter-spacing: .12em; text-transform: uppercase; color: var(--sga-dim);
+}
+
+/* mobile: the cart is an accordion at the top */
+.accordion, .accordion-item, .accordion-button, .accordion-body, .accordion-collapse {
+  background-color: var(--sga-panel) !important; color: var(--sga-soft) !important; border-color: var(--sga-line) !important; box-shadow: none !important;
+}
+.accordion-button::after { filter: invert(66%) sepia(90%) saturate(1500%) hue-rotate(2deg); }
+.mobile-top-segment { border-bottom: 1px solid var(--sga-line-hot) !important; }
+
+/* ---------- payment choices, notices, footer ---------- */
+.card, .list-group-item, .payment-type-segment, .payment-method, .section .box {
+  background-color: var(--sga-panel) !important; border-color: var(--sga-line) !important; color: var(--sga-soft) !important;
+}
+.alert { background: rgba(245,158,11,.08) !important; border: 1px solid var(--sga-line-hot) !important; color: var(--sga-soft) !important; }
+.footer-segment, .footer-segment div, .footer-segment span { color: #6b6b6b !important; font-family: var(--sga-mono) !important; font-size: 11px !important; }
+.footer-segment a { color: var(--sga-dim) !important; }
+.footer-segment::before {
+  content: "Serious plugins for unserious geese.";
+  display: block; margin-bottom: 18px; text-align: center;
+  font: 900 30px/1 var(--sga-display); text-transform: uppercase; color: var(--sga-amber);
+}
+
+@media (max-width: 767px) {
+  .split-view-primary .split-view-content::before { letter-spacing: .16em; font-size: 10px; margin-bottom: 24px; }
+  .footer-segment::before { font-size: 24px; }
+}
