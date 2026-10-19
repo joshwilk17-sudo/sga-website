@@ -160,7 +160,7 @@ def page_home(a):
         <a class="sga-btn sga-btn--amber" href="{pg["shop"]}#all">Shop the flock</a>
         <a class="sga-btn sga-btn--ghost" href="{pg["shop"]}#sister">Free sister plugins</a>
       </div>
-      <div class="sga-specs"><span class="sga-chip">macOS</span><span class="sga-chip">Apple Silicon + Intel</span><span class="sga-chip">VST3</span><span class="sga-chip">AU</span><span class="sga-chip">Standalone</span></div>
+      <div class="sga-specs"><span class="sga-chip">macOS</span><span class="sga-chip">Windows</span><span class="sga-chip">VST3</span><span class="sga-chip">AU</span><span class="sga-chip">Standalone</span></div>
     </div>
     <a class="sga-stack" href="{url(kick)}" aria-label="Goose Kicker V1">
       <img src="{img("angry-goose", a)}" alt="" width="720" height="720">
@@ -231,7 +231,7 @@ def page_home(a):
 <section class="sga-section">
   <div class="sga-wrap">
     <div class="sga-feats sga-reveal">
-      <div class="sga-feat"><div class="sga-feat__k">3 formats</div><h4>VST3 · AU · Standalone</h4><p>Works in Ableton, Logic, FL Studio, Reaper, Studio One, Bitwig and friends.</p></div>
+      <div class="sga-feat"><div class="sga-feat__k">2 platforms</div><h4>Mac + Windows</h4><p>VST3, AU and Standalone. Works in Ableton, Logic, FL Studio, Reaper, Studio One, Bitwig and friends.</p></div>
       <div class="sga-feat"><div class="sga-feat__k">1 click</div><h4>Installer included</h4><p>Unzip, run the installer, rescan your plugins. Instructions in every download.</p></div>
       <div class="sga-feat"><div class="sga-feat__k">{FREE_COUNT} free</div><h4>Free means free</h4><p>Name your price at $0. Tip the goose if it made you laugh.</p></div>
     </div>
@@ -296,16 +296,20 @@ def faq_data():
          "<p>Checkout runs through Payhip, which accepts major cards and PayPal. We never see your card details.</p>"),
     ]),
     ("Installing", "installing", [
-        ("How do I install a plugin on my Mac?",
+        ("How do I install a plugin on a Mac?",
          "<ol><li>Unzip the download.</li><li>Open <code>Read Me First.txt</code>.</li><li>Right-click <code>Install &lt;Plugin&gt;.command</code> and choose <strong>Open</strong>.</li><li>Restart your DAW and rescan plugins.</li></ol><p>The installer copies the AU, VST3 and Standalone app into the right folders for you.</p>"),
+        ("How do I install a plugin on Windows?",
+         "<ol><li>Download the Windows version from the plugin's Payhip page and unzip it.</li><li>Copy the <code>.vst3</code> into <code>C:\\Program Files\\Common Files\\VST3</code>.</li><li>Restart your DAW and rescan plugins.</li></ol><p>The Standalone app runs straight from the folder, no DAW needed. Follow the Read Me in the download if it says otherwise.</p>"),
+        ("Windows says “Windows protected your PC”. What now?",
+         "<p>That's SmartScreen being cautious about indie software. Click <strong>More info</strong>, then <strong>Run anyway</strong>.</p>"),
         ("macOS says the installer “can’t be opened”. What now?",
          "<p>That's Gatekeeper being cautious about indie software. Right-click (or Control-click) the installer and choose <strong>Open</strong>, then <strong>Open</strong> again. If that's not offered, go to <strong>System Settings → Privacy &amp; Security</strong> and click <strong>Open Anyway</strong>.</p>"),
         ("Which format should I use?",
-         "<p><strong>Logic Pro / GarageBand:</strong> AU. <strong>Ableton, FL Studio, Reaper, Studio One, Bitwig, Cubase:</strong> VST3. <strong>No DAW?</strong> Open the Standalone app and play.</p>"),
+         "<p><strong>Logic Pro / GarageBand (Mac):</strong> AU. <strong>Ableton, FL Studio, Reaper, Studio One, Bitwig, Cubase (Mac or Windows):</strong> VST3. AU is Mac-only, so on Windows use VST3. <strong>No DAW?</strong> Open the Standalone app and play.</p>"),
         ("My DAW doesn't show the plugin.",
-         "<p>Rescan your plugins (in Ableton, hold Option while clicking Rescan). In Logic, open the Plug-in Manager and reset/rescan the plugin. Still missing? <a href=\"" + CFG["pages"]["contact"] + "\">Send us a honk</a> with your DAW and macOS version.</p>"),
+         "<p>Rescan your plugins (in Ableton, hold Option while clicking Rescan). In Logic, open the Plug-in Manager and reset/rescan the plugin. Still missing? <a href=\"" + CFG["pages"]["contact"] + "\">Send us a honk</a> with your DAW and your Mac or Windows version.</p>"),
         ("Do you support Windows?",
-         "<p>Right now the flock is macOS only, universal builds for Apple Silicon and Intel. Windows is on the wish list. Follow us to hear when it lands.</p>"),
+         "<p>Yes. Every plugin comes in a Mac version (Apple Silicon and Intel) and a Windows version. Grab whichever matches your computer from the plugin's Payhip page.</p>"),
     ]),
     ("Licenses & keys", "licensing", [
         ("How do I activate a paid plugin?",
@@ -377,7 +381,7 @@ def page_contact(a):
         <div class="sga-field"><label for="sga-topic">Topic</label><select id="sga-topic" name="topic"><option>Support</option><option>License / key</option><option>Plugin idea</option><option>Collab / press</option><option>Just honking</option></select></div>
         <div class="sga-field"><label for="sga-plugin">Plugin</label><select id="sga-plugin" name="plugin"><option value="">Not about a plugin</option>{opts}</select></div>
       </div>
-      <div class="sga-field"><label for="sga-msg">Message</label><textarea id="sga-msg" name="message" required placeholder="Include your DAW and macOS version for support questions."></textarea></div>
+      <div class="sga-field"><label for="sga-msg">Message</label><textarea id="sga-msg" name="message" required placeholder="For support, include your DAW and your Mac or Windows version."></textarea></div>
       <button class="sga-btn sga-btn--amber" type="submit">Send honk</button>
       <p class="sga-note">This opens your email app with everything filled in. Prefer to write it yourself? Email <a class="sga-link" href="mailto:{e(CFG["email"])}">{e(CFG["email"])}</a></p>
     </form>
@@ -417,7 +421,7 @@ def slogan_foot(a):
     <p class="sga-foot__slogan">{SLOGAN}.</p>
     <nav class="sga-foot__nav" aria-label="Footer"><a href="{pg["home"]}">Home</a><a href="{pg["shop"]}#originals">Originals</a><a href="{pg["shop"]}#sister">Sister Plugins</a><a href="{pg["shop"]}#all">All Plugins</a><a href="{pg["faq"]}">FAQ</a><a href="{pg["contact"]}">Contact</a></nav>
     {socials()}
-    <p class="sga-note">© Silly Goose Audio · VST3 · AU · Standalone for macOS</p>
+    <p class="sga-note">© Silly Goose Audio · VST3 · AU · Standalone · macOS + Windows</p>
   </div>
 </footer>'''
 
