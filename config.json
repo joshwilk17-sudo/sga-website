@@ -1,0 +1,19 @@
+{
+  "_readme": "Edit these, then run: python3 build.py   (see README.md)",
+
+  "assets_base": "https://REPLACE-ME.example.com/sga/",
+
+  "store_url": "https://payhip.com/SillyGooseAudio",
+  "login_url": "https://payhip.com/SillyGooseAudio/users/login",
+
+  "pages": {
+    "home": "/",
+    "shop": "/shop",
+    "faq": "/faq",
+    "contact": "/contact"
+  },
+
+  "email": "hello@sillygooseaudio.com",
+  "instagram": "https://instagram.com/sillygooseaudio/",
+  "facebook": "https://www.facebook.com/profile.php?id=61593780856457"
+}

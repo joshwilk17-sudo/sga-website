@@ -1,0 +1,53 @@
+# Silly Goose Audio: custom Payhip pages
+
+Four custom pages (Home, Shop, FAQ, Contact) in the house dark/amber box-art style. They drop into Payhip as **Embed Code** sections, so Payhip's own header, search, cart, account/login and checkout stay exactly as they are.
+
+```
+WEBSITE/
+  config.json          <- edit this: asset URL, page links, contact email
+  build.py             <- product list + page content; run it after any change
+  src/sga.css, sga.js  <- shared styles and behaviour (tabs, FAQ search, honk Easter egg)
+  images/              <- web-sized box art (WebP), logo, goose head
+  audio/               <- the 7 house honks (for the click-the-goose Easter egg)
+  dist/payhip/*.html   <- PASTE THESE into Payhip (generated)
+  dist/preview/*.html  <- local preview with a mock Payhip header (generated)
+```
+
+## What Payhip needs first
+
+Payhip only allows Embed Code sections (and header/footer code) on stores with a **custom domain** connected (e.g. `sillygooseaudio.com`). See Payhip help: *Embed code on your Payhip store* and *Custom domain*.
+
+## Setup, once
+
+1. **Host `images/` and `audio/` somewhere public.** The pages are just HTML, so the box art has to live at a URL. The simplest free option: a public GitHub repo (e.g. `joshwilk17-sudo/sga-site-assets`) with GitHub Pages on, containing the `images/` and `audio/` folders.
+2. **Edit `config.json`:**
+   - `assets_base`: the URL that contains `images/` and `audio/`, ending in `/` (e.g. `https://joshwilk17-sudo.github.io/sga-site-assets/`).
+   - `pages`: the real URLs of your Payhip pages once you create them (Shop, FAQ, Contact).
+   - `email`: your support address (currently a placeholder, `hello@sillygooseaudio.com`).
+3. Run `python3 build.py`.
+
+## Put it into Payhip
+
+1. In Payhip, open **Store → Store Builder**.
+2. **Store style:** set the background to near-black (`#0d0d0d`) and accent/links to amber (`#f59e0b`) so Payhip's header and cart match.
+3. **Home page:** remove the default sections you don't want, add section → **Embed Code**, paste all of `dist/payhip/home.html`, publish.
+4. **Add pages:** create custom pages **Shop**, **FAQ**, **Contact**. On each one, add an **Embed Code** section and paste the matching `dist/payhip/<page>.html`.
+5. **Header navigation:** set the links to Home · Shop · FAQ · Contact. You can deep-link the shop tabs:
+   - `/shop#originals`: Original Plugins
+   - `/shop#sister`: Sister Plugins
+   - `/shop#all`: All Plugins (this is the default)
+   Leave the cart and account icons alone.
+6. Payhip can't preview embed code inside the builder, so check the live site after you publish.
+
+Every "Buy" or "Get it free" button links to the product's own Payhip page (`payhip.com/b/<code>`), so add-to-cart, checkout, license keys and downloads all still run through Payhip.
+
+## Adding a new plugin
+
+1. Render its box art (`BOX-ART/render.sh`), then make the web copy:
+   `sips -Z 720 BOX-ART/renders/<id>_box.png --out /tmp/<id>.png && cwebp -q 82 -alpha_q 90 /tmp/<id>.png -o WEBSITE/images/box/<id>.webp`
+2. Add an entry to `PRODUCTS` in `build.py` with its Payhip code, price, category and tagline. Set `id=None` for a "hatching soon" teaser.
+3. Upload the new image to your asset host, run `python3 build.py`, and re-paste the Home and Shop blocks.
+
+## Preview locally
+
+From the `WEBSITE` folder, run `python3 -m http.server 8765`, then open <http://localhost:8765/dist/preview/home.html>.
