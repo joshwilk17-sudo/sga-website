@@ -19,9 +19,9 @@ Payhip only allows Embed Code sections (and header/footer code) on stores with a
 
 ## Setup, once
 
-1. **Host `images/` and `audio/` somewhere public.** The pages are just HTML, so the box art has to live at a URL. The simplest free option: a public GitHub repo (e.g. `joshwilk17-sudo/sga-site-assets`) with GitHub Pages on, containing the `images/` and `audio/` folders.
+1. **Images and honks are hosted on GitHub Pages.** This folder is the public repo [joshwilk17-sudo/sga-website](https://github.com/joshwilk17-sudo/sga-website), served at `https://joshwilk17-sudo.github.io/sga-website/`. When you add or change anything in `images/` or `audio/`, commit and push it, and the live site picks it up within about a minute.
 2. **Edit `config.json`:**
-   - `assets_base`: the URL that contains `images/` and `audio/`, ending in `/` (e.g. `https://joshwilk17-sudo.github.io/sga-site-assets/`).
+   - `assets_base`: already set to the GitHub Pages URL above.
    - `pages`: the real URLs of your Payhip pages once you create them (Shop, FAQ, Contact).
    - `email`: your support address (currently a placeholder, `hello@sillygooseaudio.com`).
 3. Run `python3 build.py`.
@@ -46,7 +46,7 @@ Every "Buy" or "Get it free" button links to the product's own Payhip page (`pay
 1. Render its box art (`BOX-ART/render.sh`), then make the web copy:
    `sips -Z 720 BOX-ART/renders/<id>_box.png --out /tmp/<id>.png && cwebp -q 82 -alpha_q 90 /tmp/<id>.png -o WEBSITE/images/box/<id>.webp`
 2. Add an entry to `PRODUCTS` in `build.py` with its Payhip code, price, category and tagline. Set `id=None` for a "hatching soon" teaser.
-3. Upload the new image to your asset host, run `python3 build.py`, and re-paste the Home and Shop blocks.
+3. Run `python3 build.py`, commit and push (`git add -A && git commit -m "Add <plugin>" && git push`), then re-paste the Home and Shop blocks.
 
 ## Preview locally
 

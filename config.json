@@ -1,7 +1,7 @@
 {
   "_readme": "Edit these, then run: python3 build.py   (see README.md)",
 
-  "assets_base": "https://REPLACE-ME.example.com/sga/",
+  "assets_base": "https://joshwilk17-sudo.github.io/sga-website/",
 
   "store_url": "https://payhip.com/SillyGooseAudio",
   "login_url": "https://payhip.com/SillyGooseAudio/users/login",
