@@ -1,19 +1,15 @@
 {
   "_readme": "Edit these, then run: python3 build.py   (see README.md)",
-
   "assets_base": "https://joshwilk17-sudo.github.io/sga-website/",
-
   "store_url": "https://payhip.com/SillyGooseAudio",
   "login_url": "https://payhip.com/SillyGooseAudio/users/login",
-
   "pages": {
-    "home": "/",
-    "shop": "/shop",
-    "faq": "/faq",
-    "contact": "/contact"
+    "home": "https://sillygooseaudio.com",
+    "shop": "https://sillygooseaudio.com/Store",
+    "faq": "https://sillygooseaudio.com/faq",
+    "contact": "https://sillygooseaudio.com/contact"
   },
-
-  "email": "hello@sillygooseaudio.com",
+  "email": "sillygooseaudio@gmail.com",
   "instagram": "https://instagram.com/sillygooseaudio/",
   "facebook": "https://www.facebook.com/profile.php?id=61593780856457"
 }

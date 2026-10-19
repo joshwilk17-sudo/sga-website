@@ -320,8 +320,6 @@ def faq_data():
          "<p>The names are. The audio isn't. Every plugin is real, working DSP you can use on actual records. Some of them just do the opposite of what you'd expect.</p>"),
         ("What's a Sister Plugin?",
          "<p>A free parody of a famous plugin that does the exact opposite of the original: a de-esser that adds sibilance, a stereo imager that collapses width, an Auto-Tune that detunes. Great for sound design, terrible for your reputation.</p>"),
-        ("Is there an Easter egg?",
-         "<p>Every Silly Goose plugin hides one. Look for the goose. Click the goose.</p>"),
         ("Can I request a plugin?",
          f"<p>Please do. We keep a long list of plugins to parody and we love new ideas. <a href=\"{CFG['pages']['contact']}\">Pitch us yours.</a></p>"),
     ]),
