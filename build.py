@@ -88,7 +88,7 @@ e = html.escape
 
 
 def url(p):
-    return f"https://payhip.com/b/{p['id']}"
+    return f"{CFG['site']}/b/{p['id']}"
 
 
 def img(box, assets):
@@ -469,6 +469,29 @@ def mock_shell(name, inner):
 </body></html>'''
 
 
+def product_bundle():
+    """Header Code Injection assets: product-page reskin, served from GitHub Pages so it can change without re-pasting."""
+    a = CFG["assets_base"]
+    data = {
+        "assets": a,
+        "fonts": FONTS.split('href="')[-1].split('"')[0],
+        "shop": CFG["pages"]["shop"],
+        "products": {p["id"]: {k: p.get(k) for k in ("name", "ver", "sub", "blurb", "box", "kind", "price", "new")} for p in LIVE},
+        "cards": {p["id"]: card(p, a) for p in LIVE},
+        "strip": f'<div class="sga sga-pp-strip">{slogan_top(a)}</div>',
+        "foot": f'<div class="sga sga-pp-foot">{slogan_foot(a)}</div>',
+    }
+    out = ROOT / "dist/site"
+    out.mkdir(parents=True, exist_ok=True)
+    (out / "product.js").write_text("window.SGA_DATA = " + json.dumps(data) + ";\n" + (ROOT / "src/product.js").read_text())
+    (out / "product.css").write_text((ROOT / "src/sga.css").read_text() + "\n" + (ROOT / "src/product.css").read_text())
+    (ROOT / "dist/payhip/header-code.html").write_text(
+        "<!-- Silly Goose Audio: product page theme. Paste into Store Builder > Change store style > Advanced > Header code injection. -->\n"
+        f'<link rel="stylesheet" href="{a}dist/site/product.css">\n'
+        f'<script src="{a}dist/site/product.js" defer></script>\n')
+    print("built product theme: dist/payhip/header-code.html (+ dist/site/product.js, product.css)")
+
+
 def main():
     out_p, out_v = ROOT / "dist/payhip", ROOT / "dist/preview"
     out_p.mkdir(parents=True, exist_ok=True)
@@ -481,6 +504,7 @@ def main():
         (out_v / f"{name}.html").write_text(mock_shell(name, embed(name, "../../")))
         CFG["pages"].update(saved)
         print(f"built {name}: dist/payhip/{name}.html ({(out_p / f'{name}.html').stat().st_size // 1024} KB)")
+    product_bundle()
     if "REPLACE-ME" in CFG["assets_base"]:
         print("\nNOTE: assets_base in config.json is still a placeholder. Images/honks in dist/payhip won't load until you set it.")
 

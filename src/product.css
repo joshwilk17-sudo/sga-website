@@ -1,0 +1,152 @@
+/* Silly Goose Audio — Payhip product page reskin.
+   Loaded on every page by the Header Code Injection snippet; everything here only applies once
+   product.js has tagged <body class="sga-pp"> (i.e. on /b/<code> product pages). */
+body.sga-pp {
+  --bg: #0d0d0d; --panel: #161616; --strip: #1c1c1c; --line: #262626; --line-hot: #3a2a0d;
+  --amber: #f59e0b; --hot: #fbbf24; --deep: #b45309; --pale: #fde68a;
+  --text: #f2f2f2; --soft: #d6d6d6; --dim: #9a9a9a; --mute: #6b6b6b;
+  --display: "Barlow Condensed", "Avenir Next Condensed", "Arial Narrow", sans-serif;
+  --body: "Barlow", "Helvetica Neue", Arial, sans-serif;
+  --mono: "JetBrains Mono", ui-monospace, Menlo, monospace;
+  background: var(--bg) !important;
+}
+
+/* ---------- product hero ---------- */
+body.sga-pp #page-section-product .section-background {
+  background:
+    radial-gradient(45% 55% at 25% 30%, rgba(245,158,11,.16), transparent 70%),
+    linear-gradient(rgba(255,255,255,.025) 1px, transparent 1px) 0 0 / 44px 44px,
+    linear-gradient(90deg, rgba(255,255,255,.025) 1px, transparent 1px) 0 0 / 44px 44px,
+    var(--bg) !important;
+}
+body.sga-pp #page-section-product .section-contents { max-width: 1200px; margin: 0 auto; padding-top: 24px; padding-bottom: 24px; }
+body.sga-pp.sga-pp--box .media-and-details-wrapper-outer {
+  display: grid !important; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 56px; align-items: start;
+}
+body.sga-pp.sga-pp--box .media-and-details-wrapper-outer > * { width: auto !important; max-width: none !important; float: none !important; margin: 0 !important; padding: 0 !important; flex: none !important; }
+.sga-pp-box { position: sticky; top: 24px; }
+.sga-pp-box img { display: block; width: 100%; height: auto; filter: drop-shadow(0 40px 50px rgba(0,0,0,.85)) drop-shadow(0 0 60px rgba(245,158,11,.18)); transition: transform .4s cubic-bezier(.2,.8,.2,1); }
+.sga-pp-box img:hover { transform: rotate(-2deg) scale(1.03); }
+
+body.sga-pp .product-details-wrapper .row { margin: 0 !important; }
+body.sga-pp .product-details-wrapper .col-md-12 { padding: 0 !important; text-align: left !important; }
+
+.sga-pp-eyebrow { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; margin: 8px 0 14px; }
+.sga-pp-eyebrow .sga-eyebrow { font: 700 13px/1 var(--mono); letter-spacing: .24em; text-transform: uppercase; color: var(--dim); display: inline-flex; align-items: center; gap: 12px; }
+.sga-pp-eyebrow .sga-eyebrow::before { content: ""; width: 6px; height: 18px; border-radius: 2px; background: var(--amber); }
+
+body.sga-pp h1.font-section-product-name {
+  font: 900 clamp(52px, 6.4vw, 92px)/.88 var(--display) !important; text-transform: uppercase !important; letter-spacing: -.01em !important;
+  text-align: left !important; margin: 0 !important;
+  background: linear-gradient(180deg, var(--hot) 0%, var(--amber) 55%, var(--deep) 100%);
+  -webkit-background-clip: text; background-clip: text; color: transparent !important;
+  filter: drop-shadow(0 0 28px rgba(245,158,11,.25));
+}
+.sga-pp-sub { margin: 18px 0 0; font: 700 13px/1.5 var(--mono); letter-spacing: .16em; text-transform: uppercase; color: var(--soft); display: flex; gap: 12px; align-items: center; }
+.sga-pp-sub::before { content: ""; flex: none; width: 6px; height: 18px; border-radius: 2px; background: var(--amber); }
+.sga-pp-blurb { margin: 16px 0 0; font: 400 18px/1.55 var(--body); color: var(--soft); max-width: 52ch; }
+.sga-pp-chips { display: flex; flex-wrap: wrap; gap: 8px; margin: 22px 0 28px; }
+
+/* chips are shared with the custom pages */
+.sga-pp .sga-chip {
+  display: inline-flex; align-items: center; gap: 6px; height: 26px; padding: 0 10px;
+  font: 700 11px/1 var(--mono); letter-spacing: .12em; text-transform: uppercase;
+  border: 1.5px solid var(--amber); color: var(--amber); border-radius: 6px; background: rgba(0,0,0,.6); white-space: nowrap;
+}
+.sga-pp .sga-chip--solid { background: var(--amber); color: #111; }
+.sga-pp .sga-chip--dim { border-color: var(--line); color: var(--dim); }
+
+/* ---------- price + buttons (Payhip's own elements, restyled) ---------- */
+body.sga-pp .pwyw-outer-wrapper { margin: 0 0 16px !important; }
+body.sga-pp .pwyw-label, body.sga-pp .pwyw-label span { font: 700 11px var(--mono) !important; letter-spacing: .16em !important; text-transform: uppercase !important; color: var(--dim) !important; text-align: left !important; }
+body.sga-pp .pwyw-input-wrapper { margin-top: 8px; }
+body.sga-pp .pwyw-input-wrapper .input-group { margin: 0 !important; width: 100% !important; }
+body.sga-pp .pwyw-input-wrapper .input-group-text {
+  background: rgba(245,158,11,.1) !important; border: 1px solid var(--line-hot) !important; color: var(--amber) !important;
+  font: 700 18px var(--mono) !important; border-radius: 10px 0 0 10px !important; min-width: 52px; justify-content: center;
+}
+body.sga-pp .pwyw-input-wrapper input.form-control {
+  background: #0b0b0b !important; border: 1px solid var(--line) !important; color: var(--text) !important;
+  font: 700 20px var(--mono) !important; height: 52px !important; border-radius: 0 10px 10px 0 !important; box-shadow: none !important;
+}
+body.sga-pp .pwyw-input-wrapper input.form-control:focus { border-color: var(--amber) !important; box-shadow: 0 0 0 3px rgba(245,158,11,.18) !important; }
+
+body.sga-pp .product-details-wrapper .btn.btn-lg {
+  min-height: 58px !important; border-radius: 10px !important; margin: 0 0 12px !important;
+  font: 700 14px/1 var(--mono) !important; letter-spacing: .16em !important; text-transform: uppercase !important;
+  transition: transform .15s ease, box-shadow .2s ease, background .2s ease !important;
+}
+body.sga-pp .product-details-wrapper .btn.btn-lg span { font: inherit !important; letter-spacing: inherit !important; color: inherit !important; }
+body.sga-pp .product-details-wrapper .btn-primary {
+  background: var(--amber) !important; border: 0 !important; color: #111 !important;
+  box-shadow: 0 0 0 1px var(--hot) inset, 0 12px 32px -12px rgba(245,158,11,.8) !important;
+}
+body.sga-pp .product-details-wrapper .btn-primary:hover { background: var(--hot) !important; transform: translateY(-2px); }
+body.sga-pp .product-details-wrapper .payhip-buy-button {
+  background: rgba(0,0,0,.4) !important; border: 2px solid var(--amber) !important; color: var(--amber) !important; box-shadow: none !important;
+}
+body.sga-pp .product-details-wrapper .payhip-buy-button:hover { background: rgba(245,158,11,.1) !important; transform: translateY(-2px); }
+body.sga-pp .preview-link-and-wishlist-link-wrapper { text-align: left !important; margin-top: 4px; }
+body.sga-pp .preview-link-and-wishlist-link-wrapper a,
+body.sga-pp .preview-link-and-wishlist-link-wrapper span { font: 700 11px var(--mono) !important; letter-spacing: .16em !important; text-transform: uppercase !important; color: var(--dim) !important; }
+body.sga-pp .preview-link-and-wishlist-link-wrapper a:hover span { color: var(--amber) !important; }
+.sga-pp-trust { margin-top: 22px; display: grid; gap: 8px; font: 500 13px/1.5 var(--mono); color: var(--dim); }
+.sga-pp-trust div::before { content: "▸ "; color: var(--amber); }
+
+/* ---------- below the fold: screenshots, description, files ---------- */
+.sga-pp-more { display: grid; gap: 28px; margin-top: 72px; }
+.sga-pp-h2 { font: 900 clamp(36px, 4.4vw, 56px)/.95 var(--display); text-transform: uppercase; color: var(--text); margin: 0 0 4px; }
+.sga-pp-h2 em { font-style: normal; color: var(--amber); }
+.sga-pp-kicker { font: 700 13px/1 var(--mono); letter-spacing: .24em; text-transform: uppercase; color: var(--dim); }
+body.sga-pp .sga-pp-more .media-wrapper-outer {
+  width: auto !important; max-width: none !important; margin: 0 !important; padding: 12px !important;
+  border: 1px solid var(--line); border-radius: 18px; background: var(--panel); box-shadow: 0 30px 60px -30px rgba(0,0,0,.9);
+}
+body.sga-pp .sga-pp-more .media-wrapper-outer img { border-radius: 10px; }
+body.sga-pp .product-description {
+  margin: 0 !important; padding: 44px clamp(22px, 5vw, 64px) !important; border-radius: 18px;
+  background: radial-gradient(70% 60% at 50% 0%, rgba(245,158,11,.08), transparent 70%), var(--panel) !important;
+  border: 1px solid var(--line) !important;
+}
+body.sga-pp .product-description, body.sga-pp .product-description p, body.sga-pp .product-description li {
+  font-family: var(--body) !important; font-size: 18px !important; line-height: 1.65 !important; color: var(--soft) !important;
+}
+body.sga-pp .product-description h1, body.sga-pp .product-description h2, body.sga-pp .product-description h3 {
+  font-family: var(--display) !important; font-weight: 900 !important; text-transform: uppercase; line-height: 1 !important;
+  color: var(--amber) !important; margin: 18px 0 !important;
+}
+body.sga-pp .product-description h1 { font-size: clamp(34px, 4vw, 52px) !important; }
+body.sga-pp .product-description h1 em, body.sga-pp .product-description h2 em { font-style: normal; }
+body.sga-pp .product-description strong { color: var(--text) !important; }
+body.sga-pp .product-description a { color: var(--amber) !important; border-bottom: 1px solid rgba(245,158,11,.4); text-decoration: none !important; }
+body.sga-pp .product-description img { border-radius: 12px; }
+body.sga-pp .product-meta-wrapper {
+  margin: 0 !important; padding: 20px 24px; border: 1px dashed var(--line-hot); border-radius: 14px; text-align: left !important;
+}
+body.sga-pp .product-meta-wrapper, body.sga-pp .product-meta-wrapper * { font: 500 13px/1.6 var(--mono) !important; color: var(--dim) !important; }
+body.sga-pp .product-meta-wrapper .product-meta-message { color: var(--amber) !important; font-weight: 700 !important; letter-spacing: .12em !important; text-transform: uppercase; margin-bottom: 6px; }
+body.sga-pp .product-meta-wrapper ul { padding-left: 18px !important; margin: 0 !important; }
+body.sga-pp .social-media-buttons-wrapper { margin: 0 !important; justify-content: flex-start !important; text-align: left !important; }
+body.sga-pp .social-media-buttons-wrapper .share-title { font: 700 11px var(--mono) !important; letter-spacing: .16em; text-transform: uppercase; color: var(--dim) !important; }
+
+/* ---------- reviews ---------- */
+body.sga-pp #page-section-customer-reviews .section-background { background: var(--bg) !important; border-top: 1px solid var(--line); }
+body.sga-pp #page-section-customer-reviews .section-contents { max-width: 1200px; margin: 0 auto; }
+body.sga-pp .customer-reviews-title { font: 900 40px/1 var(--display) !important; text-transform: uppercase; color: var(--text) !important; text-align: left !important; }
+body.sga-pp #page-section-customer-reviews, body.sga-pp #page-section-customer-reviews p, body.sga-pp #page-section-customer-reviews div { color: var(--dim); }
+body.sga-pp #page-section-customer-reviews .custom-style-color-misc-border { border-color: var(--line) !important; }
+body.sga-pp #page-section-customer-reviews .btn {
+  background: transparent !important; border: 2px solid var(--amber) !important; color: var(--amber) !important; border-radius: 8px !important;
+  font: 700 12px var(--mono) !important; letter-spacing: .14em; text-transform: uppercase;
+}
+
+/* our "More from the flock" replaces Payhip's "You might also like" */
+body.sga-pp.sga-pp--related #page-section-related-products { display: none !important; }
+.sga-pp-related .sga-section { padding: 72px 0 96px; }
+
+/* ---------- responsive ---------- */
+@media (max-width: 900px) {
+  body.sga-pp.sga-pp--box .media-and-details-wrapper-outer { grid-template-columns: 1fr; gap: 8px; }
+  .sga-pp-box { position: static; max-width: 420px; margin: 0 auto; }
+  .sga-pp-more { margin-top: 48px; }
+}
