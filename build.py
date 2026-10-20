@@ -153,9 +153,8 @@ def page_home(a):
 <section class="sga-hero">
   <div class="sga-wrap sga-hero__grid">
     <div>
-      <span class="sga-eyebrow">Audio plug-ins · VST3 · AU · Standalone</span>
       <h1 class="sga-display" style="margin-top:18px">Serious plugins<br>for unserious<br>geese.</h1>
-      <p class="sga-lede">Real DSP, built by a goose who takes it a little too seriously. <strong>{len(LIVE)} plugins in the flock, {FREE_COUNT} of them free.</strong></p>
+      <p class="sga-lede">Real DSP, built by a goose who doesn't take it too seriously. </p>
       <div class="sga-btns">
         <a class="sga-btn sga-btn--amber" href="{pg["shop"]}#all">Shop the flock</a>
         <a class="sga-btn sga-btn--ghost" href="{pg["shop"]}#sister">Free sister plugins</a>
@@ -176,8 +175,8 @@ def page_home(a):
 <section class="sga-section">
   <div class="sga-wrap">
     <div class="sga-head sga-reveal">
-      <div><span class="sga-eyebrow">The flock</span><h2 class="sga-h2">Every box on <em>the shelf</em></h2></div>
-      <a class="sga-btn sga-btn--ghost sga-btn--sm" href="{pg["shop"]}#all">Browse all {len(LIVE)} →</a>
+      <div><span class="sga-eyebrow">The flock</span><h2 class="sga-h2">Every plugin in <em>the nest</em></h2></div>
+      <a class="sga-btn sga-btn--ghost sga-btn--sm" href="{pg["shop"]}#all">Browse all →</a>
     </div>
     <div class="sga-wall sga-reveal">{wall}</div>
   </div>
@@ -208,7 +207,7 @@ def page_home(a):
 
 <section class="sga-section">
   <div class="sga-wrap">
-    <div class="sga-head sga-reveal"><div><span class="sga-eyebrow">Pick your pond</span><h2 class="sga-h2">Two kinds <em>of goose</em></h2></div></div>
+    <div class="sga-head sga-reveal"><div><span class="sga-eyebrow">Pick your pond</span><h2 class="sga-h2">Two kinds <em>of geese</em></h2></div></div>
     <div class="sga-duo sga-reveal">
       <a class="sga-cat" href="{pg["shop"]}#originals">
         <div class="sga-cat__boxes"><img src="{img("angry-goose", a)}" alt="" loading="lazy"><img src="{img("goose-delay", a)}" alt="" loading="lazy"><img src="{img("goose-eq", a)}" alt="" loading="lazy"></div>
