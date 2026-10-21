@@ -25,50 +25,50 @@ PRODUCTS = [
     dict(name="The Honk", ver="V1", id="b3DEB", slug="thehonk", price=0, kind="original", box="the-honk", new=True,
          sub="One-knob goose hit replacer",
          blurb="Turn the knob, every hit becomes a goose honk. Zero latency, built for live drums."),
-    dict(name="Goose Kicker", ver="V1", id="EwJ4L", price=10, kind="original", box="goose-kicker", new=True,
+    dict(name="Goose Kicker", ver="V1", id="EwJ4L", slug="goosekicker", price=10, kind="original", box="goose-kicker", new=True,
          sub="Kick generator + Kicker FX",
          blurb="Design 808, 909, hardstyle and rawstyle kicks from scratch, crush them, drag them straight into your DAW."),
-    dict(name="Angry Goose", ver="V1", id="jBLYu", price=5, kind="original", box="angry-goose",
+    dict(name="Angry Goose", ver="V1", id="jBLYu", slug="angrygoose", price=5, kind="original", box="angry-goose",
          sub="Sample-synthesized distortion & compressor",
          blurb="Seven goose distortion models. Never mess with a mama goose."),
-    dict(name="Goose Thumper", ver="V1", id="jY2Fs", price=5, kind="original", box="goose-thumper",
+    dict(name="Goose Thumper", ver="V1", id="jY2Fs", slug="goosethumper", price=5, kind="original", box="goose-thumper",
          sub="Drum sampler & step sequencer",
          blurb="Drop in a loop. It finds every hit, chops it onto 16 pads and sorts kicks, snares and hats."),
-    dict(name="Goose Delay", ver="V1", id="ongP1", price=5, kind="original", box="goose-delay",
+    dict(name="Goose Delay", ver="V1", id="ongP1", slug="goosedelay", price=5, kind="original", box="goose-delay",
          sub="Paradox feedback delay engine",
          blurb="A delay flying around like a flock of drunk geese. Careful with that feedback knob."),
-    dict(name="Goose Re-esser", ver="V1", id="HQinh", price=5, kind="original", box="goose-re-esser",
+    dict(name="Goose Re-esser", ver="V1", id="HQinh", slug="goosere-esser", price=5, kind="original", box="goose-re-esser",
          sub="Reverse de-esser & sibilance exciter",
          blurb="Finds the sibilance and boosts it. Puts the SSSSS back."),
-    dict(name="Bit-Gooser", ver="V1", id="0FnHN", price=0, kind="original", box="bit-gooser",
+    dict(name="Bit-Gooser", ver="V1", id="0FnHN", slug="bit-gooser", price=0, kind="original", box="bit-gooser",
          sub="Bitcrusher & downsampler",
          blurb="Lower the bits. Crush the goose. The GUI pixelates as you go."),
-    dict(name="Goose EQ", ver="V1", id="mCvcM", price=0, kind="original", box="goose-eq",
+    dict(name="Goose EQ", ver="V1", id="mCvcM", slug="gooseq", price=0, kind="original", box="goose-eq",
          sub="Studio-grade parametric equalizer",
          blurb="10-band parametric EQ with HP/LP filters and the special Goose Twin Node."),
-    dict(name="Goose Gate", ver="V1", id="mE5f9", price=0, kind="original", box="goose-gate",
+    dict(name="Goose Gate", ver="V1", id="mE5f9", slug="goosegate", price=0, kind="original", box="goose-gate",
          sub="Malfunctioning noise gate",
          blurb="Designed by a goose, who can't open or close a gate. Squeaky hinge included."),
     # sister plugins (free parodies)
-    dict(name="Goose Bus Crusher", ver="V1", id="thJX5", price=0, kind="sister", box="goose-bus-crusher",
+    dict(name="Goose Bus Crusher", ver="V1", id="thJX5", slug="goosebuscrusher", price=0, kind="sister", box="goose-bus-crusher",
          sub="All-buttons-in FET limiter",
          blurb="A FET limiter that only knows one setting: every button in."),
-    dict(name="Agitate3", ver="", id="EzB3J", price=0, kind="sister", box="agitate3",
+    dict(name="Agitate3", ver="", id="EzB3J", slug="agitate3", price=0, kind="sister", box="agitate3",
          sub="Resonance amplifier",
          blurb="Finds what's harsh. Makes it worse."),
-    dict(name="Auto-Detune", ver="V1", id="ZQfJ3", price=0, kind="sister", box="auto-detune",
+    dict(name="Auto-Detune", ver="V1", id="ZQfJ3", slug="auto-detune", price=0, kind="sister", box="auto-detune",
          sub="Dissonance & anti-scale processor",
          blurb="Forces vocals out of tune and out of key. Guaranteed off-key."),
-    dict(name="Goose S1 Stereo Collapser", ver="", id="CU3Km", price=0, kind="sister", box="goose-s1-stereo-collapser",
+    dict(name="Goose S1 Stereo Collapser", ver="", id="CU3Km", slug="gooses1stereocollapser", price=0, kind="sister", box="goose-s1-stereo-collapser",
          sub="Precision stereo width collapser",
          blurb="Every widener promises bigger. This one does the opposite, with surgical precision."),
-    dict(name="Re-Feedback", ver="V1", id="fpqKD", price=0, kind="sister", box="re-feedback",
+    dict(name="Re-Feedback", ver="V1", id="fpqKD", slug="re-feedback-v1", price=0, kind="sister", box="re-feedback",
          sub="Acoustic feedback simulator",
          blurb="Puts the feedback back. Mic too close to the amp, on purpose."),
-    dict(name="OneKnob Thinner", ver="", id="GQgXz", price=0, kind="sister", box="oneknob-thinner",
+    dict(name="OneKnob Thinner", ver="", id="GQgXz", slug="oneknob-thinner", price=0, kind="sister", box="oneknob-thinner",
          sub="Dynamic progressive audio thinner",
          blurb="Make your audio thinner with one beautiful knob. One knob, zero body."),
-    dict(name="OneKnob Quieter", ver="", id="izwmW", price=0, kind="sister", box="oneknob-quieter",
+    dict(name="OneKnob Quieter", ver="", id="izwmW", slug="oneknobquieter", price=0, kind="sister", box="oneknob-quieter",
          sub="Dynamic audio attenuator",
          blurb="Make your audio quieter with one beautiful knob. It's a volume knob."),
     # box art exists, not on Payhip yet
@@ -147,6 +147,7 @@ def socials():
 def page_home(a):
     pg = CFG["pages"]
     kick = by_box["goose-kicker"]
+    refb = by_box["re-feedback"]
     names = " ".join(f"<span>{e(p['name'].upper())}</span>" for p in LIVE)
     wall = "\n".join(
         f'<a href="{url(p)}" aria-label="{e(p["name"])}"><img src="{img(p["box"], a)}" alt="{e(p["name"])} box art" loading="lazy" width="720" height="720"><span class="sga-wall__tag">{price_chip(p)}</span></a>'
@@ -191,6 +192,24 @@ def page_home(a):
 <section class="sga-section">
   <div class="sga-wrap">
     <div class="sga-spot sga-reveal">
+      <a class="sga-spot__art" href="{url(refb)}"><img src="{img("re-feedback", a)}" alt="Re-Feedback V1 box art" loading="lazy" width="720" height="720"></a>
+      <div>
+        <span class="sga-chip">The one that started it all</span>
+        <h2 class="sga-h2">Re-Feedback <em>V1</em></h2>
+        <p class="sga-lede">De-feedback plugins took all the feedback out of live sound. We missed it. So we built a plugin that puts it back.</p>
+        <ul class="sga-bullets">
+          <li>Brings back the warm, welcoming squeal of a mic too close to the amp</li>
+          <li>Made to sit right after your de-feedback plugin in a live rig</li>
+          <li>VST3, AU and Standalone for Mac and Windows</li>
+          <li><span><strong style="color:var(--text)">It's our feedback, and we want it now.</strong></span></li>
+        </ul>
+        <div class="sga-btns" style="align-items:center">
+          <span class="sga-price">Free</span>
+          <a class="sga-btn sga-btn--amber" href="{url(refb)}">Get Re-Feedback</a>
+        </div>
+      </div>
+    </div>
+    <div class="sga-spot sga-spot--flip sga-reveal" style="margin-top:28px">
       <a class="sga-spot__art" href="{url(kick)}"><img src="{img("goose-kicker", a)}" alt="Goose Kicker V1 box art" loading="lazy" width="720" height="720"></a>
       <div>
         <span class="sga-chip">Fresh out of the egg</span>

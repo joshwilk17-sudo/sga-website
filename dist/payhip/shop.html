@@ -152,6 +152,9 @@
   background: radial-gradient(70% 90% at 20% 50%, rgba(245,158,11,.16), transparent 70%), var(--panel);
 }
 .sga-spot__art img { filter: drop-shadow(0 40px 50px rgba(0,0,0,.85)); }
+/* second spotlight mirrors the first: box art on the right */
+.sga-spot--flip { grid-template-columns: 1.1fr 1fr; background: radial-gradient(70% 90% at 80% 50%, rgba(245,158,11,.16), transparent 70%), var(--panel); }
+.sga-spot--flip .sga-spot__art { order: 2; }
 .sga-bullets { margin-top: 24px; display: grid; gap: 12px; }
 .sga-bullets li { display: grid; grid-template-columns: 22px 1fr; gap: 10px; color: var(--soft); }
 .sga-bullets li::before { content: "▸"; color: var(--amber); font-family: var(--mono); }
@@ -330,6 +333,8 @@ a.sga-tile:hover { border-color: var(--amber); transform: translateX(4px); }
 @media (max-width: 1024px) {
   .sga-wall { grid-template-columns: repeat(4, 1fr); }
   .sga-spot { grid-template-columns: 1fr; padding: 32px; }
+  .sga-spot--flip { grid-template-columns: 1fr; }
+  .sga-spot--flip .sga-spot__art { order: 0; }
   .sga-faq { grid-template-columns: 1fr; gap: 0; }
   .sga-faq__nav { position: static; display: flex; flex-wrap: wrap; margin-bottom: 24px; }
 }
@@ -380,35 +385,35 @@ a.sga-tile:hover { border-color: var(--amber); transform: translateX(4px); }
   <div class="sga-card__art"><img src="https://joshwilk17-sudo.github.io/sga-website/images/box/the-honk.webp" alt="The Honk box art" loading="lazy" width="720" height="720"><span class="sga-card__price"><span class="sga-chip">Free</span></span></div>
   <div class="sga-card__body"><h3 class="sga-card__name">The Honk <small>V1</small></h3><p class="sga-card__sub">One-knob goose hit replacer</p>
   <div class="sga-card__foot"><span class="sga-card__cta">Get it free</span><span class="sga-chip">New</span></div></div>
-</a><a class="sga-card" href="https://sillygooseaudio.com/b/EwJ4L">
+</a><a class="sga-card" href="https://sillygooseaudio.com/b/goosekicker">
   <div class="sga-card__art"><img src="https://joshwilk17-sudo.github.io/sga-website/images/box/goose-kicker.webp" alt="Goose Kicker box art" loading="lazy" width="720" height="720"><span class="sga-card__price"><span class="sga-chip sga-chip--solid">$10</span></span></div>
   <div class="sga-card__body"><h3 class="sga-card__name">Goose Kicker <small>V1</small></h3><p class="sga-card__sub">Kick generator + Kicker FX</p>
   <div class="sga-card__foot"><span class="sga-card__cta">View plugin</span><span class="sga-chip">New</span></div></div>
-</a><a class="sga-card" href="https://sillygooseaudio.com/b/jBLYu">
+</a><a class="sga-card" href="https://sillygooseaudio.com/b/angrygoose">
   <div class="sga-card__art"><img src="https://joshwilk17-sudo.github.io/sga-website/images/box/angry-goose.webp" alt="Angry Goose box art" loading="lazy" width="720" height="720"><span class="sga-card__price"><span class="sga-chip sga-chip--solid">$5</span></span></div>
   <div class="sga-card__body"><h3 class="sga-card__name">Angry Goose <small>V1</small></h3><p class="sga-card__sub">Sample-synthesized distortion &amp; compressor</p>
   <div class="sga-card__foot"><span class="sga-card__cta">View plugin</span><span class="sga-chip sga-chip--dim">Original</span></div></div>
-</a><a class="sga-card" href="https://sillygooseaudio.com/b/jY2Fs">
+</a><a class="sga-card" href="https://sillygooseaudio.com/b/goosethumper">
   <div class="sga-card__art"><img src="https://joshwilk17-sudo.github.io/sga-website/images/box/goose-thumper.webp" alt="Goose Thumper box art" loading="lazy" width="720" height="720"><span class="sga-card__price"><span class="sga-chip sga-chip--solid">$5</span></span></div>
   <div class="sga-card__body"><h3 class="sga-card__name">Goose Thumper <small>V1</small></h3><p class="sga-card__sub">Drum sampler &amp; step sequencer</p>
   <div class="sga-card__foot"><span class="sga-card__cta">View plugin</span><span class="sga-chip sga-chip--dim">Original</span></div></div>
-</a><a class="sga-card" href="https://sillygooseaudio.com/b/ongP1">
+</a><a class="sga-card" href="https://sillygooseaudio.com/b/goosedelay">
   <div class="sga-card__art"><img src="https://joshwilk17-sudo.github.io/sga-website/images/box/goose-delay.webp" alt="Goose Delay box art" loading="lazy" width="720" height="720"><span class="sga-card__price"><span class="sga-chip sga-chip--solid">$5</span></span></div>
   <div class="sga-card__body"><h3 class="sga-card__name">Goose Delay <small>V1</small></h3><p class="sga-card__sub">Paradox feedback delay engine</p>
   <div class="sga-card__foot"><span class="sga-card__cta">View plugin</span><span class="sga-chip sga-chip--dim">Original</span></div></div>
-</a><a class="sga-card" href="https://sillygooseaudio.com/b/HQinh">
+</a><a class="sga-card" href="https://sillygooseaudio.com/b/goosere-esser">
   <div class="sga-card__art"><img src="https://joshwilk17-sudo.github.io/sga-website/images/box/goose-re-esser.webp" alt="Goose Re-esser box art" loading="lazy" width="720" height="720"><span class="sga-card__price"><span class="sga-chip sga-chip--solid">$5</span></span></div>
   <div class="sga-card__body"><h3 class="sga-card__name">Goose Re-esser <small>V1</small></h3><p class="sga-card__sub">Reverse de-esser &amp; sibilance exciter</p>
   <div class="sga-card__foot"><span class="sga-card__cta">View plugin</span><span class="sga-chip sga-chip--dim">Original</span></div></div>
-</a><a class="sga-card" href="https://sillygooseaudio.com/b/0FnHN">
+</a><a class="sga-card" href="https://sillygooseaudio.com/b/bit-gooser">
   <div class="sga-card__art"><img src="https://joshwilk17-sudo.github.io/sga-website/images/box/bit-gooser.webp" alt="Bit-Gooser box art" loading="lazy" width="720" height="720"><span class="sga-card__price"><span class="sga-chip">Free</span></span></div>
   <div class="sga-card__body"><h3 class="sga-card__name">Bit-Gooser <small>V1</small></h3><p class="sga-card__sub">Bitcrusher &amp; downsampler</p>
   <div class="sga-card__foot"><span class="sga-card__cta">Get it free</span><span class="sga-chip sga-chip--dim">Original</span></div></div>
-</a><a class="sga-card" href="https://sillygooseaudio.com/b/mCvcM">
+</a><a class="sga-card" href="https://sillygooseaudio.com/b/gooseq">
   <div class="sga-card__art"><img src="https://joshwilk17-sudo.github.io/sga-website/images/box/goose-eq.webp" alt="Goose EQ box art" loading="lazy" width="720" height="720"><span class="sga-card__price"><span class="sga-chip">Free</span></span></div>
   <div class="sga-card__body"><h3 class="sga-card__name">Goose EQ <small>V1</small></h3><p class="sga-card__sub">Studio-grade parametric equalizer</p>
   <div class="sga-card__foot"><span class="sga-card__cta">Get it free</span><span class="sga-chip sga-chip--dim">Original</span></div></div>
-</a><a class="sga-card" href="https://sillygooseaudio.com/b/mE5f9">
+</a><a class="sga-card" href="https://sillygooseaudio.com/b/goosegate">
   <div class="sga-card__art"><img src="https://joshwilk17-sudo.github.io/sga-website/images/box/goose-gate.webp" alt="Goose Gate box art" loading="lazy" width="720" height="720"><span class="sga-card__price"><span class="sga-chip">Free</span></span></div>
   <div class="sga-card__body"><h3 class="sga-card__name">Goose Gate <small>V1</small></h3><p class="sga-card__sub">Malfunctioning noise gate</p>
   <div class="sga-card__foot"><span class="sga-card__cta">Get it free</span><span class="sga-chip sga-chip--dim">Original</span></div></div>
@@ -416,31 +421,31 @@ a.sga-tile:hover { border-color: var(--amber); transform: translateX(4px); }
 </div>
     <div class="sga-panel" id="panel-sister" role="tabpanel" aria-labelledby="tab-sister">
   <div class="sga-panel__intro"><h2>Sister Plugins</h2><p>Parodies of plugins you already know, built to do the exact opposite. Every one of them is free.</p></div>
-  <div class="sga-grid"><a class="sga-card" href="https://sillygooseaudio.com/b/thJX5">
+  <div class="sga-grid"><a class="sga-card" href="https://sillygooseaudio.com/b/goosebuscrusher">
   <div class="sga-card__art"><img src="https://joshwilk17-sudo.github.io/sga-website/images/box/goose-bus-crusher.webp" alt="Goose Bus Crusher box art" loading="lazy" width="720" height="720"><span class="sga-card__price"><span class="sga-chip">Free</span></span></div>
   <div class="sga-card__body"><h3 class="sga-card__name">Goose Bus Crusher <small>V1</small></h3><p class="sga-card__sub">All-buttons-in FET limiter</p>
   <div class="sga-card__foot"><span class="sga-card__cta">Get it free</span><span class="sga-chip sga-chip--dim">Free parody</span></div></div>
-</a><a class="sga-card" href="https://sillygooseaudio.com/b/EzB3J">
+</a><a class="sga-card" href="https://sillygooseaudio.com/b/agitate3">
   <div class="sga-card__art"><img src="https://joshwilk17-sudo.github.io/sga-website/images/box/agitate3.webp" alt="Agitate3 box art" loading="lazy" width="720" height="720"><span class="sga-card__price"><span class="sga-chip">Free</span></span></div>
   <div class="sga-card__body"><h3 class="sga-card__name">Agitate3</h3><p class="sga-card__sub">Resonance amplifier</p>
   <div class="sga-card__foot"><span class="sga-card__cta">Get it free</span><span class="sga-chip sga-chip--dim">Free parody</span></div></div>
-</a><a class="sga-card" href="https://sillygooseaudio.com/b/ZQfJ3">
+</a><a class="sga-card" href="https://sillygooseaudio.com/b/auto-detune">
   <div class="sga-card__art"><img src="https://joshwilk17-sudo.github.io/sga-website/images/box/auto-detune.webp" alt="Auto-Detune box art" loading="lazy" width="720" height="720"><span class="sga-card__price"><span class="sga-chip">Free</span></span></div>
   <div class="sga-card__body"><h3 class="sga-card__name">Auto-Detune <small>V1</small></h3><p class="sga-card__sub">Dissonance &amp; anti-scale processor</p>
   <div class="sga-card__foot"><span class="sga-card__cta">Get it free</span><span class="sga-chip sga-chip--dim">Free parody</span></div></div>
-</a><a class="sga-card" href="https://sillygooseaudio.com/b/CU3Km">
+</a><a class="sga-card" href="https://sillygooseaudio.com/b/gooses1stereocollapser">
   <div class="sga-card__art"><img src="https://joshwilk17-sudo.github.io/sga-website/images/box/goose-s1-stereo-collapser.webp" alt="Goose S1 Stereo Collapser box art" loading="lazy" width="720" height="720"><span class="sga-card__price"><span class="sga-chip">Free</span></span></div>
   <div class="sga-card__body"><h3 class="sga-card__name">Goose S1 Stereo Collapser</h3><p class="sga-card__sub">Precision stereo width collapser</p>
   <div class="sga-card__foot"><span class="sga-card__cta">Get it free</span><span class="sga-chip sga-chip--dim">Free parody</span></div></div>
-</a><a class="sga-card" href="https://sillygooseaudio.com/b/fpqKD">
+</a><a class="sga-card" href="https://sillygooseaudio.com/b/re-feedback-v1">
   <div class="sga-card__art"><img src="https://joshwilk17-sudo.github.io/sga-website/images/box/re-feedback.webp" alt="Re-Feedback box art" loading="lazy" width="720" height="720"><span class="sga-card__price"><span class="sga-chip">Free</span></span></div>
   <div class="sga-card__body"><h3 class="sga-card__name">Re-Feedback <small>V1</small></h3><p class="sga-card__sub">Acoustic feedback simulator</p>
   <div class="sga-card__foot"><span class="sga-card__cta">Get it free</span><span class="sga-chip sga-chip--dim">Free parody</span></div></div>
-</a><a class="sga-card" href="https://sillygooseaudio.com/b/GQgXz">
+</a><a class="sga-card" href="https://sillygooseaudio.com/b/oneknob-thinner">
   <div class="sga-card__art"><img src="https://joshwilk17-sudo.github.io/sga-website/images/box/oneknob-thinner.webp" alt="OneKnob Thinner box art" loading="lazy" width="720" height="720"><span class="sga-card__price"><span class="sga-chip">Free</span></span></div>
   <div class="sga-card__body"><h3 class="sga-card__name">OneKnob Thinner</h3><p class="sga-card__sub">Dynamic progressive audio thinner</p>
   <div class="sga-card__foot"><span class="sga-card__cta">Get it free</span><span class="sga-chip sga-chip--dim">Free parody</span></div></div>
-</a><a class="sga-card" href="https://sillygooseaudio.com/b/izwmW">
+</a><a class="sga-card" href="https://sillygooseaudio.com/b/oneknobquieter">
   <div class="sga-card__art"><img src="https://joshwilk17-sudo.github.io/sga-website/images/box/oneknob-quieter.webp" alt="OneKnob Quieter box art" loading="lazy" width="720" height="720"><span class="sga-card__price"><span class="sga-chip">Free</span></span></div>
   <div class="sga-card__body"><h3 class="sga-card__name">OneKnob Quieter</h3><p class="sga-card__sub">Dynamic audio attenuator</p>
   <div class="sga-card__foot"><span class="sga-card__cta">Get it free</span><span class="sga-chip sga-chip--dim">Free parody</span></div></div>
@@ -452,63 +457,63 @@ a.sga-tile:hover { border-color: var(--amber); transform: translateX(4px); }
   <div class="sga-card__art"><img src="https://joshwilk17-sudo.github.io/sga-website/images/box/the-honk.webp" alt="The Honk box art" loading="lazy" width="720" height="720"><span class="sga-card__price"><span class="sga-chip">Free</span></span></div>
   <div class="sga-card__body"><h3 class="sga-card__name">The Honk <small>V1</small></h3><p class="sga-card__sub">One-knob goose hit replacer</p>
   <div class="sga-card__foot"><span class="sga-card__cta">Get it free</span><span class="sga-chip">New</span></div></div>
-</a><a class="sga-card" href="https://sillygooseaudio.com/b/EwJ4L">
+</a><a class="sga-card" href="https://sillygooseaudio.com/b/goosekicker">
   <div class="sga-card__art"><img src="https://joshwilk17-sudo.github.io/sga-website/images/box/goose-kicker.webp" alt="Goose Kicker box art" loading="lazy" width="720" height="720"><span class="sga-card__price"><span class="sga-chip sga-chip--solid">$10</span></span></div>
   <div class="sga-card__body"><h3 class="sga-card__name">Goose Kicker <small>V1</small></h3><p class="sga-card__sub">Kick generator + Kicker FX</p>
   <div class="sga-card__foot"><span class="sga-card__cta">View plugin</span><span class="sga-chip">New</span></div></div>
-</a><a class="sga-card" href="https://sillygooseaudio.com/b/jBLYu">
+</a><a class="sga-card" href="https://sillygooseaudio.com/b/angrygoose">
   <div class="sga-card__art"><img src="https://joshwilk17-sudo.github.io/sga-website/images/box/angry-goose.webp" alt="Angry Goose box art" loading="lazy" width="720" height="720"><span class="sga-card__price"><span class="sga-chip sga-chip--solid">$5</span></span></div>
   <div class="sga-card__body"><h3 class="sga-card__name">Angry Goose <small>V1</small></h3><p class="sga-card__sub">Sample-synthesized distortion &amp; compressor</p>
   <div class="sga-card__foot"><span class="sga-card__cta">View plugin</span><span class="sga-chip sga-chip--dim">Original</span></div></div>
-</a><a class="sga-card" href="https://sillygooseaudio.com/b/jY2Fs">
+</a><a class="sga-card" href="https://sillygooseaudio.com/b/goosethumper">
   <div class="sga-card__art"><img src="https://joshwilk17-sudo.github.io/sga-website/images/box/goose-thumper.webp" alt="Goose Thumper box art" loading="lazy" width="720" height="720"><span class="sga-card__price"><span class="sga-chip sga-chip--solid">$5</span></span></div>
   <div class="sga-card__body"><h3 class="sga-card__name">Goose Thumper <small>V1</small></h3><p class="sga-card__sub">Drum sampler &amp; step sequencer</p>
   <div class="sga-card__foot"><span class="sga-card__cta">View plugin</span><span class="sga-chip sga-chip--dim">Original</span></div></div>
-</a><a class="sga-card" href="https://sillygooseaudio.com/b/ongP1">
+</a><a class="sga-card" href="https://sillygooseaudio.com/b/goosedelay">
   <div class="sga-card__art"><img src="https://joshwilk17-sudo.github.io/sga-website/images/box/goose-delay.webp" alt="Goose Delay box art" loading="lazy" width="720" height="720"><span class="sga-card__price"><span class="sga-chip sga-chip--solid">$5</span></span></div>
   <div class="sga-card__body"><h3 class="sga-card__name">Goose Delay <small>V1</small></h3><p class="sga-card__sub">Paradox feedback delay engine</p>
   <div class="sga-card__foot"><span class="sga-card__cta">View plugin</span><span class="sga-chip sga-chip--dim">Original</span></div></div>
-</a><a class="sga-card" href="https://sillygooseaudio.com/b/HQinh">
+</a><a class="sga-card" href="https://sillygooseaudio.com/b/goosere-esser">
   <div class="sga-card__art"><img src="https://joshwilk17-sudo.github.io/sga-website/images/box/goose-re-esser.webp" alt="Goose Re-esser box art" loading="lazy" width="720" height="720"><span class="sga-card__price"><span class="sga-chip sga-chip--solid">$5</span></span></div>
   <div class="sga-card__body"><h3 class="sga-card__name">Goose Re-esser <small>V1</small></h3><p class="sga-card__sub">Reverse de-esser &amp; sibilance exciter</p>
   <div class="sga-card__foot"><span class="sga-card__cta">View plugin</span><span class="sga-chip sga-chip--dim">Original</span></div></div>
-</a><a class="sga-card" href="https://sillygooseaudio.com/b/0FnHN">
+</a><a class="sga-card" href="https://sillygooseaudio.com/b/bit-gooser">
   <div class="sga-card__art"><img src="https://joshwilk17-sudo.github.io/sga-website/images/box/bit-gooser.webp" alt="Bit-Gooser box art" loading="lazy" width="720" height="720"><span class="sga-card__price"><span class="sga-chip">Free</span></span></div>
   <div class="sga-card__body"><h3 class="sga-card__name">Bit-Gooser <small>V1</small></h3><p class="sga-card__sub">Bitcrusher &amp; downsampler</p>
   <div class="sga-card__foot"><span class="sga-card__cta">Get it free</span><span class="sga-chip sga-chip--dim">Original</span></div></div>
-</a><a class="sga-card" href="https://sillygooseaudio.com/b/mCvcM">
+</a><a class="sga-card" href="https://sillygooseaudio.com/b/gooseq">
   <div class="sga-card__art"><img src="https://joshwilk17-sudo.github.io/sga-website/images/box/goose-eq.webp" alt="Goose EQ box art" loading="lazy" width="720" height="720"><span class="sga-card__price"><span class="sga-chip">Free</span></span></div>
   <div class="sga-card__body"><h3 class="sga-card__name">Goose EQ <small>V1</small></h3><p class="sga-card__sub">Studio-grade parametric equalizer</p>
   <div class="sga-card__foot"><span class="sga-card__cta">Get it free</span><span class="sga-chip sga-chip--dim">Original</span></div></div>
-</a><a class="sga-card" href="https://sillygooseaudio.com/b/mE5f9">
+</a><a class="sga-card" href="https://sillygooseaudio.com/b/goosegate">
   <div class="sga-card__art"><img src="https://joshwilk17-sudo.github.io/sga-website/images/box/goose-gate.webp" alt="Goose Gate box art" loading="lazy" width="720" height="720"><span class="sga-card__price"><span class="sga-chip">Free</span></span></div>
   <div class="sga-card__body"><h3 class="sga-card__name">Goose Gate <small>V1</small></h3><p class="sga-card__sub">Malfunctioning noise gate</p>
   <div class="sga-card__foot"><span class="sga-card__cta">Get it free</span><span class="sga-chip sga-chip--dim">Original</span></div></div>
-</a><a class="sga-card" href="https://sillygooseaudio.com/b/thJX5">
+</a><a class="sga-card" href="https://sillygooseaudio.com/b/goosebuscrusher">
   <div class="sga-card__art"><img src="https://joshwilk17-sudo.github.io/sga-website/images/box/goose-bus-crusher.webp" alt="Goose Bus Crusher box art" loading="lazy" width="720" height="720"><span class="sga-card__price"><span class="sga-chip">Free</span></span></div>
   <div class="sga-card__body"><h3 class="sga-card__name">Goose Bus Crusher <small>V1</small></h3><p class="sga-card__sub">All-buttons-in FET limiter</p>
   <div class="sga-card__foot"><span class="sga-card__cta">Get it free</span><span class="sga-chip sga-chip--dim">Free parody</span></div></div>
-</a><a class="sga-card" href="https://sillygooseaudio.com/b/EzB3J">
+</a><a class="sga-card" href="https://sillygooseaudio.com/b/agitate3">
   <div class="sga-card__art"><img src="https://joshwilk17-sudo.github.io/sga-website/images/box/agitate3.webp" alt="Agitate3 box art" loading="lazy" width="720" height="720"><span class="sga-card__price"><span class="sga-chip">Free</span></span></div>
   <div class="sga-card__body"><h3 class="sga-card__name">Agitate3</h3><p class="sga-card__sub">Resonance amplifier</p>
   <div class="sga-card__foot"><span class="sga-card__cta">Get it free</span><span class="sga-chip sga-chip--dim">Free parody</span></div></div>
-</a><a class="sga-card" href="https://sillygooseaudio.com/b/ZQfJ3">
+</a><a class="sga-card" href="https://sillygooseaudio.com/b/auto-detune">
   <div class="sga-card__art"><img src="https://joshwilk17-sudo.github.io/sga-website/images/box/auto-detune.webp" alt="Auto-Detune box art" loading="lazy" width="720" height="720"><span class="sga-card__price"><span class="sga-chip">Free</span></span></div>
   <div class="sga-card__body"><h3 class="sga-card__name">Auto-Detune <small>V1</small></h3><p class="sga-card__sub">Dissonance &amp; anti-scale processor</p>
   <div class="sga-card__foot"><span class="sga-card__cta">Get it free</span><span class="sga-chip sga-chip--dim">Free parody</span></div></div>
-</a><a class="sga-card" href="https://sillygooseaudio.com/b/CU3Km">
+</a><a class="sga-card" href="https://sillygooseaudio.com/b/gooses1stereocollapser">
   <div class="sga-card__art"><img src="https://joshwilk17-sudo.github.io/sga-website/images/box/goose-s1-stereo-collapser.webp" alt="Goose S1 Stereo Collapser box art" loading="lazy" width="720" height="720"><span class="sga-card__price"><span class="sga-chip">Free</span></span></div>
   <div class="sga-card__body"><h3 class="sga-card__name">Goose S1 Stereo Collapser</h3><p class="sga-card__sub">Precision stereo width collapser</p>
   <div class="sga-card__foot"><span class="sga-card__cta">Get it free</span><span class="sga-chip sga-chip--dim">Free parody</span></div></div>
-</a><a class="sga-card" href="https://sillygooseaudio.com/b/fpqKD">
+</a><a class="sga-card" href="https://sillygooseaudio.com/b/re-feedback-v1">
   <div class="sga-card__art"><img src="https://joshwilk17-sudo.github.io/sga-website/images/box/re-feedback.webp" alt="Re-Feedback box art" loading="lazy" width="720" height="720"><span class="sga-card__price"><span class="sga-chip">Free</span></span></div>
   <div class="sga-card__body"><h3 class="sga-card__name">Re-Feedback <small>V1</small></h3><p class="sga-card__sub">Acoustic feedback simulator</p>
   <div class="sga-card__foot"><span class="sga-card__cta">Get it free</span><span class="sga-chip sga-chip--dim">Free parody</span></div></div>
-</a><a class="sga-card" href="https://sillygooseaudio.com/b/GQgXz">
+</a><a class="sga-card" href="https://sillygooseaudio.com/b/oneknob-thinner">
   <div class="sga-card__art"><img src="https://joshwilk17-sudo.github.io/sga-website/images/box/oneknob-thinner.webp" alt="OneKnob Thinner box art" loading="lazy" width="720" height="720"><span class="sga-card__price"><span class="sga-chip">Free</span></span></div>
   <div class="sga-card__body"><h3 class="sga-card__name">OneKnob Thinner</h3><p class="sga-card__sub">Dynamic progressive audio thinner</p>
   <div class="sga-card__foot"><span class="sga-card__cta">Get it free</span><span class="sga-chip sga-chip--dim">Free parody</span></div></div>
-</a><a class="sga-card" href="https://sillygooseaudio.com/b/izwmW">
+</a><a class="sga-card" href="https://sillygooseaudio.com/b/oneknobquieter">
   <div class="sga-card__art"><img src="https://joshwilk17-sudo.github.io/sga-website/images/box/oneknob-quieter.webp" alt="OneKnob Quieter box art" loading="lazy" width="720" height="720"><span class="sga-card__price"><span class="sga-chip">Free</span></span></div>
   <div class="sga-card__body"><h3 class="sga-card__name">OneKnob Quieter</h3><p class="sga-card__sub">Dynamic audio attenuator</p>
   <div class="sga-card__foot"><span class="sga-card__cta">Get it free</span><span class="sga-chip sga-chip--dim">Free parody</span></div></div>

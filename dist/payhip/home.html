@@ -152,6 +152,9 @@
   background: radial-gradient(70% 90% at 20% 50%, rgba(245,158,11,.16), transparent 70%), var(--panel);
 }
 .sga-spot__art img { filter: drop-shadow(0 40px 50px rgba(0,0,0,.85)); }
+/* second spotlight mirrors the first: box art on the right */
+.sga-spot--flip { grid-template-columns: 1.1fr 1fr; background: radial-gradient(70% 90% at 80% 50%, rgba(245,158,11,.16), transparent 70%), var(--panel); }
+.sga-spot--flip .sga-spot__art { order: 2; }
 .sga-bullets { margin-top: 24px; display: grid; gap: 12px; }
 .sga-bullets li { display: grid; grid-template-columns: 22px 1fr; gap: 10px; color: var(--soft); }
 .sga-bullets li::before { content: "▸"; color: var(--amber); font-family: var(--mono); }
@@ -330,6 +333,8 @@ a.sga-tile:hover { border-color: var(--amber); transform: translateX(4px); }
 @media (max-width: 1024px) {
   .sga-wall { grid-template-columns: repeat(4, 1fr); }
   .sga-spot { grid-template-columns: 1fr; padding: 32px; }
+  .sga-spot--flip { grid-template-columns: 1fr; }
+  .sga-spot--flip .sga-spot__art { order: 0; }
   .sga-faq { grid-template-columns: 1fr; gap: 0; }
   .sga-faq__nav { position: static; display: flex; flex-wrap: wrap; margin-bottom: 24px; }
 }
@@ -375,7 +380,7 @@ a.sga-tile:hover { border-color: var(--amber); transform: translateX(4px); }
       </div>
       <div class="sga-specs"><span class="sga-chip">macOS</span><span class="sga-chip">Windows</span><span class="sga-chip">VST3</span><span class="sga-chip">AU</span><span class="sga-chip">Standalone</span></div>
     </div>
-    <a class="sga-stack" href="https://sillygooseaudio.com/b/EwJ4L" aria-label="Goose Kicker V1">
+    <a class="sga-stack" href="https://sillygooseaudio.com/b/goosekicker" aria-label="Goose Kicker V1">
       <img src="https://joshwilk17-sudo.github.io/sga-website/images/box/angry-goose.webp" alt="" width="720" height="720">
       <img src="https://joshwilk17-sudo.github.io/sga-website/images/box/goose-thumper.webp" alt="" width="720" height="720">
       <img src="https://joshwilk17-sudo.github.io/sga-website/images/box/goose-kicker.webp" alt="Goose Kicker V1 box art" width="720" height="720">
@@ -393,21 +398,21 @@ a.sga-tile:hover { border-color: var(--amber); transform: translateX(4px); }
       <a class="sga-btn sga-btn--ghost sga-btn--sm" href="https://sillygooseaudio.com/Store#all">Browse all →</a>
     </div>
     <div class="sga-wall sga-reveal"><a href="https://sillygooseaudio.com/b/thehonk" aria-label="The Honk"><img src="https://joshwilk17-sudo.github.io/sga-website/images/box/the-honk.webp" alt="The Honk box art" loading="lazy" width="720" height="720"><span class="sga-wall__tag"><span class="sga-chip">Free</span></span></a>
-<a href="https://sillygooseaudio.com/b/EwJ4L" aria-label="Goose Kicker"><img src="https://joshwilk17-sudo.github.io/sga-website/images/box/goose-kicker.webp" alt="Goose Kicker box art" loading="lazy" width="720" height="720"><span class="sga-wall__tag"><span class="sga-chip sga-chip--solid">$10</span></span></a>
-<a href="https://sillygooseaudio.com/b/jBLYu" aria-label="Angry Goose"><img src="https://joshwilk17-sudo.github.io/sga-website/images/box/angry-goose.webp" alt="Angry Goose box art" loading="lazy" width="720" height="720"><span class="sga-wall__tag"><span class="sga-chip sga-chip--solid">$5</span></span></a>
-<a href="https://sillygooseaudio.com/b/jY2Fs" aria-label="Goose Thumper"><img src="https://joshwilk17-sudo.github.io/sga-website/images/box/goose-thumper.webp" alt="Goose Thumper box art" loading="lazy" width="720" height="720"><span class="sga-wall__tag"><span class="sga-chip sga-chip--solid">$5</span></span></a>
-<a href="https://sillygooseaudio.com/b/ongP1" aria-label="Goose Delay"><img src="https://joshwilk17-sudo.github.io/sga-website/images/box/goose-delay.webp" alt="Goose Delay box art" loading="lazy" width="720" height="720"><span class="sga-wall__tag"><span class="sga-chip sga-chip--solid">$5</span></span></a>
-<a href="https://sillygooseaudio.com/b/HQinh" aria-label="Goose Re-esser"><img src="https://joshwilk17-sudo.github.io/sga-website/images/box/goose-re-esser.webp" alt="Goose Re-esser box art" loading="lazy" width="720" height="720"><span class="sga-wall__tag"><span class="sga-chip sga-chip--solid">$5</span></span></a>
-<a href="https://sillygooseaudio.com/b/0FnHN" aria-label="Bit-Gooser"><img src="https://joshwilk17-sudo.github.io/sga-website/images/box/bit-gooser.webp" alt="Bit-Gooser box art" loading="lazy" width="720" height="720"><span class="sga-wall__tag"><span class="sga-chip">Free</span></span></a>
-<a href="https://sillygooseaudio.com/b/mCvcM" aria-label="Goose EQ"><img src="https://joshwilk17-sudo.github.io/sga-website/images/box/goose-eq.webp" alt="Goose EQ box art" loading="lazy" width="720" height="720"><span class="sga-wall__tag"><span class="sga-chip">Free</span></span></a>
-<a href="https://sillygooseaudio.com/b/mE5f9" aria-label="Goose Gate"><img src="https://joshwilk17-sudo.github.io/sga-website/images/box/goose-gate.webp" alt="Goose Gate box art" loading="lazy" width="720" height="720"><span class="sga-wall__tag"><span class="sga-chip">Free</span></span></a>
-<a href="https://sillygooseaudio.com/b/thJX5" aria-label="Goose Bus Crusher"><img src="https://joshwilk17-sudo.github.io/sga-website/images/box/goose-bus-crusher.webp" alt="Goose Bus Crusher box art" loading="lazy" width="720" height="720"><span class="sga-wall__tag"><span class="sga-chip">Free</span></span></a>
-<a href="https://sillygooseaudio.com/b/EzB3J" aria-label="Agitate3"><img src="https://joshwilk17-sudo.github.io/sga-website/images/box/agitate3.webp" alt="Agitate3 box art" loading="lazy" width="720" height="720"><span class="sga-wall__tag"><span class="sga-chip">Free</span></span></a>
-<a href="https://sillygooseaudio.com/b/ZQfJ3" aria-label="Auto-Detune"><img src="https://joshwilk17-sudo.github.io/sga-website/images/box/auto-detune.webp" alt="Auto-Detune box art" loading="lazy" width="720" height="720"><span class="sga-wall__tag"><span class="sga-chip">Free</span></span></a>
-<a href="https://sillygooseaudio.com/b/CU3Km" aria-label="Goose S1 Stereo Collapser"><img src="https://joshwilk17-sudo.github.io/sga-website/images/box/goose-s1-stereo-collapser.webp" alt="Goose S1 Stereo Collapser box art" loading="lazy" width="720" height="720"><span class="sga-wall__tag"><span class="sga-chip">Free</span></span></a>
-<a href="https://sillygooseaudio.com/b/fpqKD" aria-label="Re-Feedback"><img src="https://joshwilk17-sudo.github.io/sga-website/images/box/re-feedback.webp" alt="Re-Feedback box art" loading="lazy" width="720" height="720"><span class="sga-wall__tag"><span class="sga-chip">Free</span></span></a>
-<a href="https://sillygooseaudio.com/b/GQgXz" aria-label="OneKnob Thinner"><img src="https://joshwilk17-sudo.github.io/sga-website/images/box/oneknob-thinner.webp" alt="OneKnob Thinner box art" loading="lazy" width="720" height="720"><span class="sga-wall__tag"><span class="sga-chip">Free</span></span></a>
-<a href="https://sillygooseaudio.com/b/izwmW" aria-label="OneKnob Quieter"><img src="https://joshwilk17-sudo.github.io/sga-website/images/box/oneknob-quieter.webp" alt="OneKnob Quieter box art" loading="lazy" width="720" height="720"><span class="sga-wall__tag"><span class="sga-chip">Free</span></span></a>
+<a href="https://sillygooseaudio.com/b/goosekicker" aria-label="Goose Kicker"><img src="https://joshwilk17-sudo.github.io/sga-website/images/box/goose-kicker.webp" alt="Goose Kicker box art" loading="lazy" width="720" height="720"><span class="sga-wall__tag"><span class="sga-chip sga-chip--solid">$10</span></span></a>
+<a href="https://sillygooseaudio.com/b/angrygoose" aria-label="Angry Goose"><img src="https://joshwilk17-sudo.github.io/sga-website/images/box/angry-goose.webp" alt="Angry Goose box art" loading="lazy" width="720" height="720"><span class="sga-wall__tag"><span class="sga-chip sga-chip--solid">$5</span></span></a>
+<a href="https://sillygooseaudio.com/b/goosethumper" aria-label="Goose Thumper"><img src="https://joshwilk17-sudo.github.io/sga-website/images/box/goose-thumper.webp" alt="Goose Thumper box art" loading="lazy" width="720" height="720"><span class="sga-wall__tag"><span class="sga-chip sga-chip--solid">$5</span></span></a>
+<a href="https://sillygooseaudio.com/b/goosedelay" aria-label="Goose Delay"><img src="https://joshwilk17-sudo.github.io/sga-website/images/box/goose-delay.webp" alt="Goose Delay box art" loading="lazy" width="720" height="720"><span class="sga-wall__tag"><span class="sga-chip sga-chip--solid">$5</span></span></a>
+<a href="https://sillygooseaudio.com/b/goosere-esser" aria-label="Goose Re-esser"><img src="https://joshwilk17-sudo.github.io/sga-website/images/box/goose-re-esser.webp" alt="Goose Re-esser box art" loading="lazy" width="720" height="720"><span class="sga-wall__tag"><span class="sga-chip sga-chip--solid">$5</span></span></a>
+<a href="https://sillygooseaudio.com/b/bit-gooser" aria-label="Bit-Gooser"><img src="https://joshwilk17-sudo.github.io/sga-website/images/box/bit-gooser.webp" alt="Bit-Gooser box art" loading="lazy" width="720" height="720"><span class="sga-wall__tag"><span class="sga-chip">Free</span></span></a>
+<a href="https://sillygooseaudio.com/b/gooseq" aria-label="Goose EQ"><img src="https://joshwilk17-sudo.github.io/sga-website/images/box/goose-eq.webp" alt="Goose EQ box art" loading="lazy" width="720" height="720"><span class="sga-wall__tag"><span class="sga-chip">Free</span></span></a>
+<a href="https://sillygooseaudio.com/b/goosegate" aria-label="Goose Gate"><img src="https://joshwilk17-sudo.github.io/sga-website/images/box/goose-gate.webp" alt="Goose Gate box art" loading="lazy" width="720" height="720"><span class="sga-wall__tag"><span class="sga-chip">Free</span></span></a>
+<a href="https://sillygooseaudio.com/b/goosebuscrusher" aria-label="Goose Bus Crusher"><img src="https://joshwilk17-sudo.github.io/sga-website/images/box/goose-bus-crusher.webp" alt="Goose Bus Crusher box art" loading="lazy" width="720" height="720"><span class="sga-wall__tag"><span class="sga-chip">Free</span></span></a>
+<a href="https://sillygooseaudio.com/b/agitate3" aria-label="Agitate3"><img src="https://joshwilk17-sudo.github.io/sga-website/images/box/agitate3.webp" alt="Agitate3 box art" loading="lazy" width="720" height="720"><span class="sga-wall__tag"><span class="sga-chip">Free</span></span></a>
+<a href="https://sillygooseaudio.com/b/auto-detune" aria-label="Auto-Detune"><img src="https://joshwilk17-sudo.github.io/sga-website/images/box/auto-detune.webp" alt="Auto-Detune box art" loading="lazy" width="720" height="720"><span class="sga-wall__tag"><span class="sga-chip">Free</span></span></a>
+<a href="https://sillygooseaudio.com/b/gooses1stereocollapser" aria-label="Goose S1 Stereo Collapser"><img src="https://joshwilk17-sudo.github.io/sga-website/images/box/goose-s1-stereo-collapser.webp" alt="Goose S1 Stereo Collapser box art" loading="lazy" width="720" height="720"><span class="sga-wall__tag"><span class="sga-chip">Free</span></span></a>
+<a href="https://sillygooseaudio.com/b/re-feedback-v1" aria-label="Re-Feedback"><img src="https://joshwilk17-sudo.github.io/sga-website/images/box/re-feedback.webp" alt="Re-Feedback box art" loading="lazy" width="720" height="720"><span class="sga-wall__tag"><span class="sga-chip">Free</span></span></a>
+<a href="https://sillygooseaudio.com/b/oneknob-thinner" aria-label="OneKnob Thinner"><img src="https://joshwilk17-sudo.github.io/sga-website/images/box/oneknob-thinner.webp" alt="OneKnob Thinner box art" loading="lazy" width="720" height="720"><span class="sga-wall__tag"><span class="sga-chip">Free</span></span></a>
+<a href="https://sillygooseaudio.com/b/oneknobquieter" aria-label="OneKnob Quieter"><img src="https://joshwilk17-sudo.github.io/sga-website/images/box/oneknob-quieter.webp" alt="OneKnob Quieter box art" loading="lazy" width="720" height="720"><span class="sga-wall__tag"><span class="sga-chip">Free</span></span></a>
 <a class="sga-wall__soon" aria-label="Honkesizer (hatching soon)"><img src="https://joshwilk17-sudo.github.io/sga-website/images/box/honkesizer.webp" alt="" loading="lazy" width="720" height="720"><span class="sga-wall__tag"><span class="sga-chip sga-chip--dim">Hatching soon</span></span></a>
 <a class="sga-wall__soon" aria-label="Goose Confusion (hatching soon)"><img src="https://joshwilk17-sudo.github.io/sga-website/images/box/goose-confusion.webp" alt="" loading="lazy" width="720" height="720"><span class="sga-wall__tag"><span class="sga-chip sga-chip--dim">Hatching soon</span></span></a>
 <a class="sga-wall__soon" aria-label="Goose Shaper (hatching soon)"><img src="https://joshwilk17-sudo.github.io/sga-website/images/box/goose-shaper.webp" alt="" loading="lazy" width="720" height="720"><span class="sga-wall__tag"><span class="sga-chip sga-chip--dim">Hatching soon</span></span></a>
@@ -418,7 +423,25 @@ a.sga-tile:hover { border-color: var(--amber); transform: translateX(4px); }
 <section class="sga-section">
   <div class="sga-wrap">
     <div class="sga-spot sga-reveal">
-      <a class="sga-spot__art" href="https://sillygooseaudio.com/b/EwJ4L"><img src="https://joshwilk17-sudo.github.io/sga-website/images/box/goose-kicker.webp" alt="Goose Kicker V1 box art" loading="lazy" width="720" height="720"></a>
+      <a class="sga-spot__art" href="https://sillygooseaudio.com/b/re-feedback-v1"><img src="https://joshwilk17-sudo.github.io/sga-website/images/box/re-feedback.webp" alt="Re-Feedback V1 box art" loading="lazy" width="720" height="720"></a>
+      <div>
+        <span class="sga-chip">The one that started it all</span>
+        <h2 class="sga-h2">Re-Feedback <em>V1</em></h2>
+        <p class="sga-lede">De-feedback plugins took all the feedback out of live sound. We missed it. So we built a plugin that puts it back.</p>
+        <ul class="sga-bullets">
+          <li>Brings back the warm, welcoming squeal of a mic too close to the amp</li>
+          <li>Made to sit right after your de-feedback plugin in a live rig</li>
+          <li>VST3, AU and Standalone for Mac and Windows</li>
+          <li><span><strong style="color:var(--text)">It's our feedback, and we want it now.</strong></span></li>
+        </ul>
+        <div class="sga-btns" style="align-items:center">
+          <span class="sga-price">Free</span>
+          <a class="sga-btn sga-btn--amber" href="https://sillygooseaudio.com/b/re-feedback-v1">Get Re-Feedback</a>
+        </div>
+      </div>
+    </div>
+    <div class="sga-spot sga-spot--flip sga-reveal" style="margin-top:28px">
+      <a class="sga-spot__art" href="https://sillygooseaudio.com/b/goosekicker"><img src="https://joshwilk17-sudo.github.io/sga-website/images/box/goose-kicker.webp" alt="Goose Kicker V1 box art" loading="lazy" width="720" height="720"></a>
       <div>
         <span class="sga-chip">Fresh out of the egg</span>
         <h2 class="sga-h2">Goose Kicker <em>V1</em></h2>
@@ -431,7 +454,7 @@ a.sga-tile:hover { border-color: var(--amber); transform: translateX(4px); }
         </ul>
         <div class="sga-btns" style="align-items:center">
           <span class="sga-price">$10<small>USD</small></span>
-          <a class="sga-btn sga-btn--amber" href="https://sillygooseaudio.com/b/EwJ4L">Get Goose Kicker</a>
+          <a class="sga-btn sga-btn--amber" href="https://sillygooseaudio.com/b/goosekicker">Get Goose Kicker</a>
         </div>
       </div>
     </div>
