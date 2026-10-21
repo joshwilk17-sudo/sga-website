@@ -22,7 +22,7 @@ CFG = json.loads((ROOT / "config.json").read_text())
 # ---------------------------------------------------------------------------------------------
 PRODUCTS = [
     # originals
-    dict(name="The Honk", ver="V1", id="thehonk", price=0, kind="original", box="the-honk", new=True,
+    dict(name="The Honk", ver="V1", id="b3DEB", slug="thehonk", price=0, kind="original", box="the-honk", new=True,
          sub="One-knob goose hit replacer",
          blurb="Turn the knob, every hit becomes a goose honk. Zero latency, built for live drums."),
     dict(name="Goose Kicker", ver="V1", id="EwJ4L", price=10, kind="original", box="goose-kicker", new=True,
@@ -93,7 +93,8 @@ e = html.escape
 
 
 def url(p):
-    return f"{CFG['site']}/b/{p['id']}"
+    # slug = the product's custom Payhip URL (sillygooseaudio.com/b/<slug>); id is always the real product key
+    return f"{CFG['site']}/b/{p.get('slug') or p['id']}"
 
 
 def img(box, assets):

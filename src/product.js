@@ -16,7 +16,8 @@
     /* product key: Payhip puts it on the buy buttons (works with custom URL slugs like /b/angry-goose); URL is the fallback */
     var keyEl = sec.querySelector("[data-product]") || sec.querySelector("[data-product-key]");
     var m = location.pathname.match(/\/b\/([A-Za-z0-9]+)/);
-    var id = (keyEl && (keyEl.getAttribute("data-product") || keyEl.getAttribute("data-product-key"))) || (m && m[1]);
+    var id = keyEl && (keyEl.getAttribute("data-product") || keyEl.getAttribute("data-product-key"));
+    if (!(id && D.products[id]) && m) id = m[1];
     var p = id && D.products[id];
 
     body.classList.add("sga-pp");

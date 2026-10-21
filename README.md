@@ -47,7 +47,7 @@ Every "Buy" or "Get it free" button links to the product's own Payhip page (`sil
 
 1. Render its box art (`BOX-ART/render.sh`), then make the web copy:
    `sips -Z 720 BOX-ART/renders/<id>_box.png --out /tmp/<id>.png && cwebp -q 82 -alpha_q 90 /tmp/<id>.png -o WEBSITE/images/box/<id>.webp`
-2. Add an entry to `PRODUCTS` in `build.py` with its Payhip code, price, category and tagline. Set `id=None` for a "hatching soon" teaser.
+2. Add an entry to `PRODUCTS` in `build.py` with its Payhip product code (`id`, the 5-character key from the edit page, even if the product has a custom URL), price, category and tagline. If the product has a custom URL like `/b/thehonk`, add `slug="thehonk"` too. Set `id=None` for a "hatching soon" teaser.
 3. Run `python3 build.py`, commit and push (`git add -A && git commit -m "Add <plugin>" && git push`), then re-paste the Home and Shop blocks. Product pages update by themselves (the header code loads `dist/site/product.js` from GitHub Pages; allow about 10 minutes for caches).
 
 ## Preview locally
