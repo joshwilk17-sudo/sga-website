@@ -22,6 +22,9 @@ CFG = json.loads((ROOT / "config.json").read_text())
 # ---------------------------------------------------------------------------------------------
 PRODUCTS = [
     # originals
+    dict(name="The Honk", ver="V1", id="thehonk", price=0, kind="original", box="the-honk", new=True,
+         sub="One-knob goose hit replacer",
+         blurb="Turn the knob, every hit becomes a goose honk. Zero latency, built for live drums."),
     dict(name="Goose Kicker", ver="V1", id="EwJ4L", price=10, kind="original", box="goose-kicker", new=True,
          sub="Kick generator + Kicker FX",
          blurb="Design 808, 909, hardstyle and rawstyle kicks from scratch, crush them, drag them straight into your DAW."),
@@ -69,10 +72,6 @@ PRODUCTS = [
          sub="Dynamic audio attenuator",
          blurb="Make your audio quieter with one beautiful knob. It's a volume knob."),
     # box art exists, not on Payhip yet
-    # The Honk: free original. Once it's on Payhip -> id="<code>", price=0, kind="original", new=True
-    dict(name="The Honk", ver="V1", id=None, price=None, kind="soon", box="the-honk",
-         sub="One-knob goose hit replacer",
-         blurb="Turn the knob, every hit becomes a goose honk. Zero latency, built for live drums."),
     dict(name="Goose Confusion", ver="VX", id=None, price=None, kind="soon", box="goose-confusion",
          sub="Vocal incomprehensibility engine", blurb=""),
     dict(name="Goose Shaper", ver="V1", id=None, price=None, kind="soon", box="goose-shaper",
