@@ -75,8 +75,8 @@ PRODUCTS = [
          sub="Dynamic audio attenuator",
          blurb="Make your audio quieter with one beautiful knob. It's a volume knob."),
     # box art exists, not on Payhip yet
-    dict(name="PAZ-ta Analyzer", ver="V1", id=None, price=None, kind="soon", box="pazta-analyzer",
-         sub="Psychoacoustic analyzer, al dente", blurb=""),
+    dict(name="GOOSE PAZ Analyzer", ver="V1", id=None, price=None, kind="soon", box="goose-paz-analyzer",
+         sub="Psychoacoustic analyzer", blurb=""),
     dict(name="Honkesizer", ver="V1", id=None, price=None, kind="soon", box="honkesizer",
          sub="Granular + wavetable goose synth", blurb=""),
     dict(name="Goose Confusion", ver="VX", id=None, price=None, kind="soon", box="goose-confusion",
