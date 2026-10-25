@@ -53,6 +53,9 @@ PRODUCTS = [
          sub="Malfunctioning noise gate",
          blurb="Designed by a goose, who can't open or close a gate. Squeaky hinge included."),
     # sister plugins (free parodies)
+    dict(name="The Gooner", ver="V1", id="Lhqrf", slug="thegooner", price=0, kind="sister", box="the-gooner", new=True,
+         sub="Always-in-tune tuner",
+         blurb="Play a note. It thinks very hard, then tells you you're perfectly in tune. Every time."),
     dict(name="Goose Bus Crusher", ver="V1", id="thJX5", slug="goosebuscrusher", price=0, kind="sister", box="goose-bus-crusher",
          sub="All-buttons-in FET limiter",
          blurb="A FET limiter that only knows one setting: every button in."),
@@ -75,8 +78,6 @@ PRODUCTS = [
          sub="Dynamic audio attenuator",
          blurb="Make your audio quieter with one beautiful knob. It's a volume knob."),
     # box art exists, not on Payhip yet
-    dict(name="The Gooner", ver="V1", id=None, price=None, kind="soon", box="the-gooner",
-         sub="Always-in-tune tuner", blurb=""),
     dict(name="GOOSE PAZ Analyzer", ver="V1", id=None, price=None, kind="soon", box="goose-paz-analyzer",
          sub="Psychoacoustic analyzer", blurb=""),
     dict(name="Honkesizer", ver="V1", id=None, price=None, kind="soon", box="honkesizer",
