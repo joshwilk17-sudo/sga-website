@@ -442,7 +442,7 @@ def page_contact(a):
 # ---------------------------------------------------------------------------------------------
 HARDWARE = dict(
     photos=[],
-    stl_id=None, stl_slug=None, stl_price=None,
+    stl_id="hcSzP", stl_slug="re-feedback-hardware", stl_price=20,
 )
 
 
@@ -613,7 +613,11 @@ def product_bundle():
         "assets": a,
         "fonts": FONTS.split('href="')[-1].split('"')[0],
         "shop": CFG["pages"]["shop"],
-        "products": {p["id"]: {k: p.get(k) for k in ("name", "ver", "sub", "blurb", "box", "kind", "price", "new")} for p in LIVE},
+        "products": {**{p["id"]: {k: p.get(k) for k in ("name", "ver", "sub", "blurb", "box", "kind", "price", "new")} for p in LIVE},
+                     **({HARDWARE["stl_id"]: dict(name="Re-Feedback Hardware", ver="", kind="hardware", box=None, price=HARDWARE["stl_price"],
+                                                 sub="3D-printable case STL files",
+                                                 blurb="Print your own case for a Minisforum M1-1390 mini PC and a Focusrite Scarlett 18i16 audio interface.")}
+                        if HARDWARE["stl_id"] else {})},
         "cards": {p["id"]: card(p, a) for p in LIVE},
         "strip": f'<div class="sga sga-pp-strip">{slogan_top(a)}</div>',
         "foot": f'<div class="sga sga-pp-foot">{slogan_foot(a)}</div>',

@@ -19,6 +19,7 @@
     var id = keyEl && (keyEl.getAttribute("data-product") || keyEl.getAttribute("data-product-key"));
     if (!(id && D.products[id]) && m) id = m[1];
     var p = id && D.products[id];
+    var hw = p && p.kind === "hardware"; /* Re-Feedback Hardware STL files: no box art, no plugin formats */
 
     body.classList.add("sga-pp");
     if (!document.querySelector('link[data-sga-fonts]')) {
@@ -40,30 +41,33 @@
     /* hero: box art left, title + specs right */
     if (p && outer) {
       body.classList.add("sga-pp--box");
-      outer.insertBefore(el('<div class="sga-pp-box"><img class="sga-honk" src="' + D.assets + "images/box/" + p.box + '.webp" alt="' + p.name + ' box art" width="720" height="720"></div>'), outer.firstChild);
+      /* hardware keeps Payhip's own photo on the left instead of box art */
+      if (!hw) outer.insertBefore(el('<div class="sga-pp-box"><img class="sga-honk" src="' + D.assets + "images/box/" + p.box + '.webp" alt="' + p.name + ' box art" width="720" height="720"></div>'), outer.firstChild);
     }
     if (p && h1) {
-      var kind = p.kind === "sister" ? "Free sister plugin" : "Silly Goose original";
+      var kind = hw ? "Re-Feedback Hardware" : p.kind === "sister" ? "Free sister plugin" : "Silly Goose original";
       var price = p.price === 0 ? '<span class="sga-chip">Free</span>' : '<span class="sga-chip sga-chip--solid">$' + p.price + "</span>";
       var isNew = p["new"] ? '<span class="sga-chip">New</span>' : "";
       h1.insertAdjacentElement("beforebegin", el('<div class="sga-pp-eyebrow"><span class="sga-eyebrow">' + kind + "</span>" + price + isNew + "</div>"));
       var after = '<div class="sga-pp-after"><p class="sga-pp-sub">' + p.sub + "</p>" +
         (p.blurb ? '<p class="sga-pp-blurb">' + p.blurb + "</p>" : "") +
-        '<div class="sga-pp-chips"><span class="sga-chip">VST3</span><span class="sga-chip">AU</span><span class="sga-chip">Standalone</span><span class="sga-chip sga-chip--dim">macOS</span><span class="sga-chip sga-chip--dim">Windows</span></div></div>';
+        (hw ? '<div class="sga-pp-chips"><span class="sga-chip">STL files</span><span class="sga-chip">3D printable</span><span class="sga-chip sga-chip--dim">Digital download</span></div></div>'
+            : '<div class="sga-pp-chips"><span class="sga-chip">VST3</span><span class="sga-chip">AU</span><span class="sga-chip">Standalone</span><span class="sga-chip sga-chip--dim">macOS</span><span class="sga-chip sga-chip--dim">Windows</span></div></div>');
       h1.insertAdjacentElement("afterend", el(after));
     }
 
     /* reassurance lines under the buttons */
     if (p && col) {
       var anchor = col.querySelector(".preview-link-and-wishlist-link-wrapper") || col.querySelector(".payhip-buy-button") || col.querySelector(".btn-primary");
-      var lines = ["Instant download after checkout", "Mac (Apple Silicon + Intel) and Windows", p.price === 0 ? "Free. No payment needed" : "License key included with your receipt"];
+      var lines = hw ? ["Instant download after checkout", "Fits a Minisforum M1-1390 + Focusrite Scarlett 18i16", "Computer and interface not included"]
+        : ["Instant download after checkout", "Mac (Apple Silicon + Intel) and Windows", p.price === 0 ? "Free. No payment needed" : "License key included with your receipt"];
       if (anchor) anchor.insertAdjacentElement("afterend", el('<div class="sga-pp-trust"><div>' + lines.join("</div><div>") + "</div></div>"));
     }
 
     /* below the fold: screenshots, description, file list, share */
     if (p && contents) {
       var more = el('<div class="sga-pp-more"></div>');
-      if (media) {
+      if (media && !hw) {
         more.appendChild(el('<div><div class="sga-pp-kicker">Inside the box</div><h2 class="sga-pp-h2">Meet <em>' + p.name + "</em></h2></div>"));
         more.appendChild(media);
       }
