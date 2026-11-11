@@ -43,7 +43,7 @@ PRODUCTS = [
     dict(name="Goose Delay", ver="V1", id="ongP1", slug="goosedelay", price=5, kind="original", box="goose-delay",
          sub="Paradox feedback delay engine",
          blurb="A delay flying around like a flock of drunk geese. Careful with that feedback knob."),
-    dict(name="Goose Re-esser", ver="V1", id="HQinh", slug="goosere-esser", price=5, kind="original", box="goose-re-esser",
+    dict(name="Goose Re-esser", ver="V1", id="HQinh", slug="goosere-esser", price=0, kind="original", box="goose-re-esser",
          sub="Reverse de-esser & sibilance exciter",
          blurb="Finds the sibilance and boosts it. Puts the SSSSS back."),
     dict(name="Bit-Gooser", ver="V1", id="0FnHN", slug="bit-gooser", price=0, kind="original", box="bit-gooser",
