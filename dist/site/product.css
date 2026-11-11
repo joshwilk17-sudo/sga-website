@@ -463,6 +463,10 @@ body.sga-pp h1.font-section-product-name {
 
 /* ---------- price + buttons (Payhip's own elements, restyled) ---------- */
 body.sga-pp .pwyw-outer-wrapper { margin: 0 0 16px !important; }
+/* fixed-price products (no name-your-price box) */
+body.sga-pp .product-details-wrapper .product-price, body.sga-pp .product-details-wrapper .product-price .value {
+  font: 900 52px/1 var(--display) !important; color: var(--amber) !important; text-align: left !important; margin: 0 0 18px !important;
+}
 body.sga-pp .pwyw-label, body.sga-pp .pwyw-label span { font: 700 11px var(--mono) !important; letter-spacing: .16em !important; text-transform: uppercase !important; color: var(--dim) !important; text-align: left !important; }
 body.sga-pp .pwyw-input-wrapper { margin-top: 8px; }
 body.sga-pp .pwyw-input-wrapper .input-group { margin: 0 !important; width: 100% !important; }
