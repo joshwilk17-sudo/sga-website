@@ -56,7 +56,7 @@ From the `WEBSITE` folder, run `python3 -m http.server 8765`, then open <http://
 
 ## Re-Feedback Hardware page
 
-`dist/payhip/hardware.html` is the page for the 3D-printed case (Minisforum M1-1390 + Focusrite Scarlett 18i16). In Payhip, create a custom page (the build assumes the URL `/re-feedback-hardware`; change `pages.hardware` in `config.json` if yours differs), add an **Embed Code** section and paste the file. Add it to the header menu too.
+`dist/payhip/hardware.html` is the page for the 3D-printed case (Minisforum M1-1390 + Focusrite Scarlett 18i16). In Payhip, create a custom page (live at `/re-feedback-v1-hardware`, set as `pages.hardware` in `config.json`), add an **Embed Code** section and paste the file. Add it to the header menu too.
 
 Everything for the page lives in `HARDWARE` in `build.py`:
 
