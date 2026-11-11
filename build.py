@@ -434,8 +434,111 @@ def page_contact(a):
 '''
 
 
+# ---------------------------------------------------------------------------------------------
+# Re-Feedback Hardware: Josh's 3D-printed case (Minisforum M1-1390 + Focusrite Scarlett 18i16).
+# photos: files in images/hardware/ (WebP), first one is the hero. ("file.webp", "caption")
+# stl_id / stl_slug / stl_price: fill in once the STL product exists on Payhip; until then the
+# buy button shows "Coming soon".
+# ---------------------------------------------------------------------------------------------
+HARDWARE = dict(
+    photos=[],
+    stl_id=None, stl_slug=None, stl_price=None,
+)
+
+
+def page_hardware(a):
+    hw = CFG["pages"]
+    H = HARDWARE
+    refb = by_box["re-feedback"]
+    live = bool(H["stl_id"])
+    buy_url = f"{CFG['site']}/b/{H['stl_slug'] or H['stl_id']}" if live else ""
+    if live:
+        price = "Free" if H["stl_price"] == 0 else f"${H['stl_price']}"
+        buy_btn = f'<a class="sga-btn sga-btn--amber" href="{buy_url}">Buy the STL files</a>'
+        price_html = f'<span class="sga-price">{price}{"" if H["stl_price"] == 0 else "<small>USD</small>"}</span>'
+    else:
+        buy_btn = f'<span class="sga-btn sga-btn--ghost" aria-disabled="true" style="opacity:.7;cursor:default">STL files coming soon</span>'
+        price_html = '<span class="sga-chip">Coming soon</span>'
+
+    photos = H["photos"]
+    if photos:
+        hero = f'<img src="{a}images/hardware/{photos[0][0]}" alt="{e(photos[0][1])}" width="1600" height="1200">'
+        tiles = "".join(
+            f'<a class="sga-shot" href="{a}images/hardware/{f}" data-caption="{e(cap)}"><img src="{a}images/hardware/{f}" alt="{e(cap)}" loading="lazy"></a>'
+            for f, cap in photos)
+    else:
+        hero = '<div class="sga-shot-ph"><img src="' + a + 'images/goose-head.png" alt="" width="400" height="386"><span>Photos landing soon</span></div>'
+        tiles = "".join('<div class="sga-shot sga-shot-ph"><span>Photo</span></div>' for _ in range(6))
+
+    return f'''
+<header class="sga-pagehead">
+  <div class="sga-wrap sga-hw-hero">
+    <div>
+      <span class="sga-eyebrow">Hardware · 3D-printable case</span>
+      <h1 class="sga-display">Re-Feedback<br>Hardware</h1>
+      <p class="sga-lede">A custom 3D-printed case that houses a <strong>Minisforum M1-1390</strong> mini PC and a <strong>Focusrite Scarlett 18i16</strong> audio interface in one box. Print it yourself: the STL files are available on the store.</p>
+      <div class="sga-btns">{buy_btn}<a class="sga-btn sga-btn--ghost" href="#hw-photos">See the photos</a></div>
+    </div>
+    <a class="sga-hw-hero__photo" href="#hw-photos">{hero}</a>
+  </div>
+</header>
+
+<section class="sga-section" id="hw-photos">
+  <div class="sga-wrap">
+    <div class="sga-head sga-reveal"><div><span class="sga-eyebrow">The build</span><h2 class="sga-h2">Up close <em>and printed</em></h2></div></div>
+    <div class="sga-gallery sga-reveal">{tiles}</div>
+  </div>
+</section>
+
+<section class="sga-section">
+  <div class="sga-wrap">
+    <div class="sga-head sga-reveal"><div><span class="sga-eyebrow">What goes inside</span><h2 class="sga-h2">Two boxes, <em>one case</em></h2></div></div>
+    <div class="sga-feats sga-hw-parts sga-reveal">
+      <div class="sga-feat"><div class="sga-feat__k">Mini PC</div><h4>Minisforum M1-1390</h4><p>The computer at the heart of the rig.</p></div>
+      <div class="sga-feat"><div class="sga-feat__k">Interface</div><h4>Focusrite Scarlett 18i16</h4><p>All the inputs and outputs, right there in the case.</p></div>
+      <div class="sga-feat"><div class="sga-feat__k">You print</div><h4>The case</h4><p>Download the STL files and print the parts on your own 3D printer.</p></div>
+    </div>
+    <p class="sga-note sga-reveal" style="margin-top:18px">The STL files are a digital download. The computer and audio interface are not included.</p>
+  </div>
+</section>
+
+<section class="sga-section" id="hw-buy">
+  <div class="sga-wrap">
+    <div class="sga-spot sga-reveal">
+      <div class="sga-hw-files" aria-hidden="true"><span>.STL</span><span>.STL</span><span>.STL</span></div>
+      <div>
+        <span class="sga-chip">Digital download</span>
+        <h2 class="sga-h2">The <em>STL files</em></h2>
+        <p class="sga-lede">Everything you need to print the Re-Feedback Hardware case yourself.</p>
+        <ul class="sga-bullets">
+          <li>3D-printable STL files for the case</li>
+          <li>Instant download through Payhip after checkout</li>
+          <li>Fits a Minisforum M1-1390 and a Focusrite Scarlett 18i16</li>
+          <li>Computer and interface not included</li>
+        </ul>
+        <div class="sga-btns" style="align-items:center">{price_html}{buy_btn}</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sga-section">
+  <div class="sga-wrap">
+    <div class="sga-cta sga-reveal">
+      <h2 class="sga-h2">Now give it <em>something to play</em></h2>
+      <p class="sga-lede">The plugin that started it all is free. Questions about the case? <a class="sga-link" href="{CFG["pages"]["contact"]}">Send us a honk.</a></p>
+      <div class="sga-btns"><a class="sga-btn sga-btn--amber" href="{url(refb)}">Get Re-Feedback V1, free</a></div>
+    </div>
+  </div>
+</section>
+
+<div class="sga-lightbox" hidden><button class="sga-lightbox__close" aria-label="Close">×</button><button class="sga-lightbox__prev" aria-label="Previous photo">‹</button><figure><img alt=""><figcaption></figcaption></figure><button class="sga-lightbox__next" aria-label="Next photo">›</button></div>
+'''
+
+
 PAGES = {"home": ("Silly Goose Audio", page_home), "shop": ("Shop", page_shop),
-         "faq": ("FAQ", page_faq), "contact": ("Contact", page_contact)}
+         "faq": ("FAQ", page_faq), "contact": ("Contact", page_contact),
+         "hardware": ("Re-Feedback Hardware", page_hardware)}
 
 FONTS = '<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;800;900&family=Barlow:wght@400;500;600&family=JetBrains+Mono:wght@500;700&display=swap">'
 
@@ -453,7 +556,7 @@ def slogan_foot(a):
   <div class="sga-wrap sga-foot__in">
     <img class="sga-foot__goose sga-honk" src="{a}images/goose-head.png" alt="Click the goose" width="400" height="386" loading="lazy">
     <p class="sga-foot__slogan">{SLOGAN}.</p>
-    <nav class="sga-foot__nav" aria-label="Footer"><a href="{pg["home"]}">Home</a><a href="{pg["shop"]}#originals">Originals</a><a href="{pg["shop"]}#sister">Sister Plugins</a><a href="{pg["shop"]}#all">All Plugins</a><a href="{pg["faq"]}">FAQ</a><a href="{pg["contact"]}">Contact</a></nav>
+    <nav class="sga-foot__nav" aria-label="Footer"><a href="{pg["home"]}">Home</a><a href="{pg["shop"]}#originals">Originals</a><a href="{pg["shop"]}#sister">Sister Plugins</a><a href="{pg["shop"]}#all">All Plugins</a><a href="{pg["hardware"]}">Re-Feedback Hardware</a><a href="{pg["faq"]}">FAQ</a><a href="{pg["contact"]}">Contact</a></nav>
     {socials()}
     <p class="sga-note">© Silly Goose Audio · VST3 · AU · Standalone · macOS + Windows</p>
   </div>
@@ -476,7 +579,7 @@ def mock_shell(name, inner):
     """Local preview only: imitates the Payhip header (nav + search/account/cart) so you can judge the page in context."""
     nav = "".join(
         f'<a href="{k}.html"{" class=on" if k == name else ""}>{label}</a>'
-        for k, label in [("home", "Home"), ("shop", "Shop"), ("faq", "FAQ"), ("contact", "Contact")]
+        for k, label in [("home", "Home"), ("shop", "Shop"), ("hardware", "Re-Feedback Hardware"), ("faq", "FAQ"), ("contact", "Contact")]
     )
     return f'''<!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">

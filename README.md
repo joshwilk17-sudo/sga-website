@@ -53,3 +53,14 @@ Every "Buy" or "Get it free" button links to the product's own Payhip page (`sil
 ## Preview locally
 
 From the `WEBSITE` folder, run `python3 -m http.server 8765`, then open <http://localhost:8765/dist/preview/home.html>.
+
+## Re-Feedback Hardware page
+
+`dist/payhip/hardware.html` is the page for the 3D-printed case (Minisforum M1-1390 + Focusrite Scarlett 18i16). In Payhip, create a custom page (the build assumes the URL `/re-feedback-hardware`; change `pages.hardware` in `config.json` if yours differs), add an **Embed Code** section and paste the file. Add it to the header menu too.
+
+Everything for the page lives in `HARDWARE` in `build.py`:
+
+- **Photos:** convert each photo to WebP (`sips -Z 1600 photo.jpg --out /tmp/p.png && cwebp -q 82 /tmp/p.png -o images/hardware/<name>.webp`), then list them as `("<name>.webp", "caption")`. The first photo is the large one at the top. Until there are photos, the page shows striped placeholders.
+- **Buy button:** once the STL product exists on Payhip, set `stl_id` (the 5-character product key), `stl_slug` (its custom URL, if any) and `stl_price` (`0` for free). Until then the button reads "STL files coming soon".
+
+Then run `python3 build.py`, commit and push (the photos are served from GitHub Pages), and re-paste `hardware.html`. The footer on every page now links to this page, so re-paste the other four blocks once too.

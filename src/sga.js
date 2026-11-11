@@ -81,6 +81,31 @@
     });
   }
 
+  /* Photo lightbox (Re-Feedback Hardware gallery). Without JS each photo just opens on its own. */
+  var shots = root.querySelectorAll(".sga-gallery a.sga-shot"), box = root.querySelector(".sga-lightbox");
+  if (shots.length && box) {
+    var bImg = box.querySelector("img"), bCap = box.querySelector("figcaption"), cur = 0;
+    var showShot = function (i) {
+      cur = (i + shots.length) % shots.length;
+      bImg.src = shots[cur].getAttribute("href");
+      bImg.alt = bCap.textContent = shots[cur].getAttribute("data-caption") || "";
+    };
+    var closeBox = function () { box.hidden = true; document.documentElement.style.overflow = ""; };
+    shots.forEach(function (a, i) {
+      a.addEventListener("click", function (e) { e.preventDefault(); showShot(i); box.hidden = false; document.documentElement.style.overflow = "hidden"; });
+    });
+    box.querySelector(".sga-lightbox__prev").addEventListener("click", function () { showShot(cur - 1); });
+    box.querySelector(".sga-lightbox__next").addEventListener("click", function () { showShot(cur + 1); });
+    box.querySelector(".sga-lightbox__close").addEventListener("click", closeBox);
+    box.addEventListener("click", function (e) { if (e.target === box) closeBox(); });
+    document.addEventListener("keydown", function (e) {
+      if (box.hidden) return;
+      if (e.key === "Escape") closeBox();
+      if (e.key === "ArrowRight") showShot(cur + 1);
+      if (e.key === "ArrowLeft") showShot(cur - 1);
+    });
+  }
+
   /* Scroll-in reveal */
   var rev = root.querySelectorAll(".sga-reveal");
   if ("IntersectionObserver" in window) {
