@@ -445,7 +445,11 @@ def page_contact(a):
 # buy button shows "Coming soon".
 # ---------------------------------------------------------------------------------------------
 HARDWARE = dict(
-    photos=[],
+    photos=[
+        ("angle.webp", "Three-quarter view with the vented side and goose badge"),
+        ("front.webp", "Front: the mini PC, the I/O panels and the Scarlett 18i16"),
+        ("top.webp", "The lid: Re-Feedback V1 and the Silly Goose Audio logo"),
+    ],
     stl_id="hcSzP", stl_slug="re-feedback-hardware", stl_price=20,
 )
 
@@ -466,7 +470,7 @@ def page_hardware(a):
 
     photos = H["photos"]
     if photos:
-        hero = f'<img src="{a}images/hardware/{photos[0][0]}" alt="{e(photos[0][1])}" width="1600" height="1200">'
+        hero = f'<img src="{a}images/hardware/{photos[0][0]}" alt="{e(photos[0][1])}" width="1200" height="1607">'
         tiles = "".join(
             f'<a class="sga-shot" href="{a}images/hardware/{f}" data-caption="{e(cap)}"><img src="{a}images/hardware/{f}" alt="{e(cap)}" loading="lazy"></a>'
             for f, cap in photos)

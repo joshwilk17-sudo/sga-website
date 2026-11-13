@@ -335,13 +335,14 @@ a.sga-tile:hover { border-color: var(--amber); transform: translateX(4px); }
 .sga-hw-hero .sga-lede strong { color: var(--text); font-weight: 600; }
 .sga-hw-hero__photo { display: block; border-radius: 20px; overflow: hidden; border: 1px solid var(--line-hot);
   box-shadow: 0 40px 80px -30px rgba(0,0,0,.9), 0 0 60px rgba(245,158,11,.18); background: var(--panel); }
-.sga-hw-hero__photo img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; }
+.sga-hw-hero__photo img { width: 100%; aspect-ratio: 3 / 4; object-fit: cover; }
+.sga-hw-hero__photo { max-width: 520px; justify-self: center; width: 100%; }
 .sga-gallery { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
 .sga-shot { position: relative; display: block; border-radius: 14px; overflow: hidden; border: 1px solid var(--line); background: var(--panel); cursor: zoom-in; }
-.sga-shot img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; transition: transform .4s cubic-bezier(.2,.8,.2,1); }
+.sga-shot img { width: 100%; aspect-ratio: 3 / 4; object-fit: cover; transition: transform .4s cubic-bezier(.2,.8,.2,1); }
 .sga-shot:hover { border-color: var(--amber); }
 .sga-shot:hover img { transform: scale(1.04); }
-.sga-shot-ph { display: grid; place-items: center; gap: 12px; aspect-ratio: 4 / 3; cursor: default; color: var(--mute);
+.sga-shot-ph { display: grid; place-items: center; gap: 12px; aspect-ratio: 3 / 4; cursor: default; color: var(--mute);
   font: 700 12px var(--mono); letter-spacing: .2em; text-transform: uppercase;
   background: repeating-linear-gradient(135deg, rgba(245,158,11,.05) 0 14px, transparent 14px 28px), var(--panel); }
 .sga-shot-ph img { width: 72px; opacity: .6; }
@@ -414,14 +415,14 @@ a.sga-tile:hover { border-color: var(--amber); transform: translateX(4px); }
       <p class="sga-lede">A custom 3D-printed case that houses a <strong>Minisforum M1-1390</strong> mini PC and a <strong>Focusrite Scarlett 18i16</strong> audio interface in one box. Print it yourself: the STL files are available on the store.</p>
       <div class="sga-btns"><a class="sga-btn sga-btn--amber" href="https://sillygooseaudio.com/b/re-feedback-hardware">Buy the STL files</a><a class="sga-btn sga-btn--ghost" href="#hw-photos">See the photos</a></div>
     </div>
-    <a class="sga-hw-hero__photo" href="#hw-photos"><div class="sga-shot-ph"><img src="https://joshwilk17-sudo.github.io/sga-website/images/goose-head.png" alt="" width="400" height="386"><span>Photos landing soon</span></div></a>
+    <a class="sga-hw-hero__photo" href="#hw-photos"><img src="https://joshwilk17-sudo.github.io/sga-website/images/hardware/angle.webp" alt="Three-quarter view with the vented side and goose badge" width="1200" height="1607"></a>
   </div>
 </header>
 
 <section class="sga-section" id="hw-photos">
   <div class="sga-wrap">
     <div class="sga-head sga-reveal"><div><span class="sga-eyebrow">The build</span><h2 class="sga-h2">Up close <em>and printed</em></h2></div></div>
-    <div class="sga-gallery sga-reveal"><div class="sga-shot sga-shot-ph"><span>Photo</span></div><div class="sga-shot sga-shot-ph"><span>Photo</span></div><div class="sga-shot sga-shot-ph"><span>Photo</span></div><div class="sga-shot sga-shot-ph"><span>Photo</span></div><div class="sga-shot sga-shot-ph"><span>Photo</span></div><div class="sga-shot sga-shot-ph"><span>Photo</span></div></div>
+    <div class="sga-gallery sga-reveal"><a class="sga-shot" href="https://joshwilk17-sudo.github.io/sga-website/images/hardware/angle.webp" data-caption="Three-quarter view with the vented side and goose badge"><img src="https://joshwilk17-sudo.github.io/sga-website/images/hardware/angle.webp" alt="Three-quarter view with the vented side and goose badge" loading="lazy"></a><a class="sga-shot" href="https://joshwilk17-sudo.github.io/sga-website/images/hardware/front.webp" data-caption="Front: the mini PC, the I/O panels and the Scarlett 18i16"><img src="https://joshwilk17-sudo.github.io/sga-website/images/hardware/front.webp" alt="Front: the mini PC, the I/O panels and the Scarlett 18i16" loading="lazy"></a><a class="sga-shot" href="https://joshwilk17-sudo.github.io/sga-website/images/hardware/top.webp" data-caption="The lid: Re-Feedback V1 and the Silly Goose Audio logo"><img src="https://joshwilk17-sudo.github.io/sga-website/images/hardware/top.webp" alt="The lid: Re-Feedback V1 and the Silly Goose Audio logo" loading="lazy"></a></div>
   </div>
 </section>
 
