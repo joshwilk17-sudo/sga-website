@@ -84,6 +84,8 @@ PRODUCTS = [
          sub="Dynamic audio attenuator",
          blurb="Make your audio quieter with one beautiful knob. It's a volume knob."),
     # box art exists, not on Payhip yet
+    dict(name="OneKnob Darker", ver="V1", id=None, price=None, kind="soon", box="oneknob-darker",
+         sub="Progressive audio dimmer", blurb=""),
     dict(name="GOOSE PAZ Analyzer", ver="V1", id=None, price=None, kind="soon", box="goose-paz-analyzer",
          sub="Psychoacoustic analyzer", blurb=""),
     dict(name="Honkesizer", ver="V1", id=None, price=None, kind="soon", box="honkesizer",
