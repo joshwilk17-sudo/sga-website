@@ -56,6 +56,9 @@ PRODUCTS = [
          sub="Malfunctioning noise gate",
          blurb="Designed by a goose, who can't open or close a gate. Squeaky hinge included."),
     # sister plugins (free parodies)
+    dict(name="OneKnob Darker", ver="V1", id="rLx7a", slug="oneknobdarker", price=0, kind="sister", box="oneknob-darker", new=True,
+         sub="Progressive audio dimmer",
+         blurb="Make your audio darker with one beautiful knob. The lights go down with it."),
     dict(name="Goose Decompressor", ver="V1", id="kvFe2", slug="goosedecompressor", price=0, kind="sister", box="goose-decompressor", new=True,
          sub="Leveling un-amplifier",
          blurb="The legendary two-knob leveler, backwards. Loud gets louder, quiet gets quieter."),
@@ -84,8 +87,6 @@ PRODUCTS = [
          sub="Dynamic audio attenuator",
          blurb="Make your audio quieter with one beautiful knob. It's a volume knob."),
     # box art exists, not on Payhip yet
-    dict(name="OneKnob Darker", ver="V1", id=None, price=None, kind="soon", box="oneknob-darker",
-         sub="Progressive audio dimmer", blurb=""),
     dict(name="OneKnob Dryer", ver="V1", id=None, price=None, kind="soon", box="oneknob-dryer",
          sub="Progressive room dehumidifier", blurb=""),
     dict(name="GOOSE PAZ Analyzer", ver="V1", id=None, price=None, kind="soon", box="goose-paz-analyzer",
