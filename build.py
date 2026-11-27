@@ -86,6 +86,8 @@ PRODUCTS = [
     # box art exists, not on Payhip yet
     dict(name="OneKnob Darker", ver="V1", id=None, price=None, kind="soon", box="oneknob-darker",
          sub="Progressive audio dimmer", blurb=""),
+    dict(name="OneKnob Dryer", ver="V1", id=None, price=None, kind="soon", box="oneknob-dryer",
+         sub="Progressive room dehumidifier", blurb=""),
     dict(name="GOOSE PAZ Analyzer", ver="V1", id=None, price=None, kind="soon", box="goose-paz-analyzer",
          sub="Psychoacoustic analyzer", blurb=""),
     dict(name="Honkesizer", ver="V1", id=None, price=None, kind="soon", box="honkesizer",
